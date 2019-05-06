@@ -1,11 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import './Movie';
+import Navigation from '../elements/Navigation/Navigation';
+import MovieInfo from '../elements/MovieInfo/MovieInfo';
+import MovieInfoBar from '../elements/MovieInfoBar/MovieInfoBar';
+import FourColGrid from '../elements/FourColGrid/FourColGrid';
+import Spinner from '../elements/Spinner/Spinner';
 
 class Movie extends Component {
   render() {
     return (
-      <div>
-        Movie
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto magni perferendis, totam cum consectetur libero suscipit nam ipsam nemo sequi omnis!</p>
+      <div className="rmdb-movie">
+        <Navigation />
+        <MovieInfo />
+        <MovieInfoBar />
+        <FourColGrid />
+        <Spinner />
       </div>
     )
   }
