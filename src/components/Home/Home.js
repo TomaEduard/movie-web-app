@@ -24,6 +24,27 @@ class Home extends Component {
     this.fetchItems(endpoint);
   }
 
+  fetchItems = (endpoint) => {
+    fetch(endpoint)
+      .then(result => result.json())
+      .then(result => {
+        console.log('OLD');
+        console.log(result);
+
+
+        this.setState({
+          movies: [...this.state.movies, ...result.results],
+          heroImage: this.state.heroImage || result.results[0],
+          loading: false,
+          currentPage: result.page,
+          totalPages: result.total_pages
+        })
+        console.log('NEW');
+        console.log(this.state.movies);
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
   // Search items
   searchItems = (searchTerm) => {
     console.log(searchTerm);
@@ -49,32 +70,14 @@ class Home extends Component {
     if (this.state.searchTerm === '') {
       endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${this.state.currentPage + 1}`;
     } else {
-      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query${this.state.searchTerm}&page=${this.state.currentPage + 1}`;
+      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${this.state.searchTerm}&page=${this.state.currentPage + 1}`;
     }
     this.fetchItems(endpoint);
-  }
-
-  fetchItems = (endpoint) => {
-    fetch(endpoint)
-      .then(result => result.json())
-      .then(result => {
-        console.log(result);
-
-        this.setState({
-          movies: [...this.state.movies, ...result.results],
-          heroImage: this.state.heroImage || result.results[0],
-          loading: false,
-          currentPage: result.page,
-          totalPages: result.total_pages
-        })
-      })
-      .catch(error => console.error('Error:', error))
   }
 
   render() {
     return (
       <div className="rmdb-home">
-
         {this.state.heroImage ?
           <div>
             <HeroImage
@@ -86,10 +89,10 @@ class Home extends Component {
             <SearchBar callback={this.searchItems} />
 
           </div> : null}
-
         <div className="rmdb-home-grid">
 
           <FourColGrid
+            // if this.state.searchTerm exist set header 'Search Result' if not 'Popular Movies'
             header={this.state.searchTerm ? 'Search Result' : 'Popular Movies'}
             loading={this.state.loading}
           >
@@ -100,17 +103,19 @@ class Home extends Component {
                 clickable={true}
                 image={element.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${element.poster_path}` : './images/no_image.jpg'}
 
-              // moviId={element.id}
-              // movieName={element.original_title}
+                movieId={element.id}
+                movieName={element.original_title}
               />
             })}
+
           </FourColGrid>
+
           {this.state.loading ? <Spinner /> : null}
+          {/* if currnetPage isn't last page and loading is false,then show load more btn */}
           {(this.state.currentPage <= this.state.totalPages && !this.state.loading) ?
             <LoadMoreBtn text="Load More" onClick={this.loadMoreItems} /> : null}
         </div>
 
-        <LoadMoreBtn />
       </div>
     )
   }

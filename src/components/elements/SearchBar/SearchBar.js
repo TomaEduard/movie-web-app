@@ -9,12 +9,12 @@ class SearchBar extends Component {
 
   timeout = null;
 
-  doSeearch = (e) => {
+  doSearch = (e) => {
     this.setState({ value: e.target.value })
     clearTimeout(this.cleartimeout)
 
     this.timeout = setTimeout(() => {
-      this.props.callback(this.state.value);
+      this.props.callback(this.state.value)
     }, 800);
   }
 
@@ -29,11 +29,9 @@ class SearchBar extends Component {
             type="text"
             className="rmdb-searchbar-input"
             placeholder="Search"
-            onChange={this.doSeearch}
-            value={this.state.value}
+            onChange={this.doSearch}
+          // value={this.state.value}
           />
-
-          {/* </i> */}
 
         </div>
       </div>
