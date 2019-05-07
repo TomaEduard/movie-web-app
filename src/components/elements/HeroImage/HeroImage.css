@@ -34,13 +34,13 @@
 }
 
 .rmdb-heroimage-text h1 {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
   font-size: 48px;
   color: #fff;
 }
 
 .rmdb-heroimage-text p {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
   font-size: 22px;
   line-height: 26px;
   font-weight: lighter;

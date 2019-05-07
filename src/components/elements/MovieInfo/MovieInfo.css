@@ -10,10 +10,10 @@
 
 @keyframes animateMovieinfo {
   from {
-      opacity:0;
+    opacity: 0;
   }
   to {
-      opacity:1;
+    opacity: 1;
   }
 }
 
@@ -35,7 +35,6 @@
 }
 
 .rmdb-movieinfo-text {
-  font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   width: auto;
   padding: 40px;
@@ -47,8 +46,7 @@
 }
 
 .rmdb-movieinfo-text h1 {
-  font-family: 'Abel', sans-serif;
-  font-size:48px;
+  font-size: 48px;
   margin: 0;
 }
 
@@ -59,7 +57,6 @@
 }
 
 .rmdb-movieinfo-text p {
-  font-family: 'Abel', sans-serif;
   font-size: 18px;
   line-height: 26px;
 }
@@ -71,7 +68,7 @@
   position: relative;
 }
 
-.rmdb-percent {
+.rmdb-score {
   position: absolute;
   margin: 0;
   right: 0px;
@@ -90,8 +87,8 @@
 }
 
 meter::-webkit-meter-bar {
-  background: #FFF;
-  width:200px;
+  background: #fff;
+  width: 200px;
 }
 meter::-webkit-meter-optimum-value {
   background: linear-gradient(to bottom, #16d47b);

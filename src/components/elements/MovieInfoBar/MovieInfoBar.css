@@ -5,7 +5,6 @@
   position: relative;
   padding: 25px 20px 0px 20px;
   box-sizing: border-box;
-  font-family: 'Abel', sans-serif;
   font-size: 22px;
 }
 
@@ -24,17 +23,21 @@
 }
 
 .rmdb-movieinfobar-info {
-  padding: 5px 0 0 10px;
+  padding: 8px 0 0 15px;
   float: left;
 }
 
-.fa-time, .fa-revenue {
+.fa-time,
+.fa-revenue {
   float: left;
   margin-top: -4px;
-
 }
 
 .fa-budget {
   float: left;
   margin-top: -3px;
+}
+
+.famarginleft {
+  padding-left: 16px;
 }

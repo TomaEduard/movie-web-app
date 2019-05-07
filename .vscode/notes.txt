@@ -1,0 +1,6 @@
+rate movie
+favorite movie
+watch movie
+play list movie
+
+find from: gene, language

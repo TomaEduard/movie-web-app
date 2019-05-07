@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navigation';
+import './Navigation.css';
 
 const Navigation = (props) => {
   return (
-    <div>
-      Navigation
+    <div className="rmdb-navigation">
+      <div className="rmdb-navigation-content">
+        <Link to="/">
+          <p>Home</p>
+        </Link>
+        <p>/</p>
+
+        <p>{props.movie.title}</p>
+      </div>
     </div>
   )
 }
