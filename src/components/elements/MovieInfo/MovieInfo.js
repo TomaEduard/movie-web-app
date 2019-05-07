@@ -38,6 +38,32 @@ const MovieInfo = (props) => {
             return <p key={i} className="rmdb-director">{element.name}</p>
           })}
 
+          <br>
+          </br>
+          <div className="container">
+            <div className="row">
+              <div className="star">
+                <div className="fas fa-star fa-2x"></div>
+                <div className="fas fa-star fa-2x"></div>
+                <div className="fas fa-star fa-2x"></div>
+                <div className="fas fa-star fa-2x"></div>
+                <div className="fas fa-star-half-alt fa-2x"></div>
+                <div className="far fa-star fa-2x"></div>
+              </div>
+
+              <div className="hearth">
+                <div className="fas fa-heart fa-2x"></div>
+                <div className="far fa-heart fa-2x"></div>
+              </div>
+
+
+              <div className="fas fa-history watch fa-2x"></div>
+
+              <p>favorite movie</p>
+              <p>watch movie</p>
+            </div>
+          </div>
+
         </div>
         <div className="fas fa-film fa-6x" name="film" />
       </div>

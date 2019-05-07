@@ -7,11 +7,11 @@ const Navigation = (props) => {
     <div className="rmdb-navigation">
       <div className="rmdb-navigation-content">
         <Link to="/">
-          <p>Home</p>
+          <p className="Home">Home</p>
         </Link>
         <p>/</p>
 
-        <p>{props.movie.title}</p>
+        <p className="Movie-t">{props.movie.title}</p>
       </div>
     </div>
   )
