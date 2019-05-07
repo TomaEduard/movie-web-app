@@ -33,11 +33,10 @@
   margin-top: -4px;
 }
 
-.fa-budget {
-  float: left;
-  margin-top: -3px;
-}
-
 .famarginleft {
   padding-left: 16px;
+}
+
+.rot {
+  transform: rotate(-40deg);
 }

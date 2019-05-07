@@ -85,7 +85,7 @@ class Movie extends Component {
             </FourColGrid>
 
             {/* if don't have any actor type <h1>No Movie Found!</h1> */}
-            {!this.state.actor && !this.state.loading ? <h1>No Movie Found!</h1> : null}
+            {!this.state.actors && !this.state.loading ? <h1>No Movie Found!</h1> : null}
             {this.state.loading ? <Spinner /> : null}
           </div>
           : null}
