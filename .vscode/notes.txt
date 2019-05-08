@@ -1,6 +1,3 @@
-rate movie
-favorite movie
-watch movie
-play list movie
-
 find from: gene, language
+
+id movie rating favorite watchlist playlist

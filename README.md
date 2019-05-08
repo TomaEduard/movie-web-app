@@ -1,6 +1,6 @@
 # Movie-App
 
-This application is the front end that uses public API (mdb) to display and sort movies. On the back-end side use Spring Boot for the following features (rate movie, favorite movie, watch movie, playlist, and so on ...) Below the deployment sessions find the links attached to each component.
+Didactic project that aims to use elementary things for the purpose of learning. This application is the front-end side that uses public API (mdb) to display and sort movies. Below the deployment sessions find the links attached to each component.
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Deployment
 
-- [Back-end](https://github.com/TomaEduard/movie-app-api) - The web framework used
+- [Back-end](https://github.com/TomaEduard/movie-app-api)
 
 ## Built With
 
@@ -39,19 +39,15 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 - [React-Fontawesome ^4.7.0](https://rometools.github.io/rome/) - Used to generate icons
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/TomaEduard/movie-app-api/tags).
+We use [GitHub](https://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/TomaEduard/movie-web-app).
 
 ## Authors
 
-- **Eduard Toma** - _Initial work_ - [PurpleBooth](https://github.com/TomaEduard/movie-web-app)
+- **Eduard Toma** [- _Initial work_ -](https://github.com/TomaEduard/movie-web-app)
 
-See also the list of [contributors](https://github.com/TomaEduard/movie-web-app/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/TomaEduard/movie-app-api/graphs/contributors) who participated in this project.
 
 ## License
 
