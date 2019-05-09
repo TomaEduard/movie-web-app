@@ -30,8 +30,10 @@ const Header = () => {
       <div className="navbar-brand icon-header">
         <Link to="/">
           <img className="rmdb-logo"
-            src="./images/1asd.png"
-            alt="rmdb-logo" />
+            // src="./images/1asd.png"
+            src="./../../../images/1asd.png"
+            alt="rmdb-logo"
+          />
         </Link>
       </div>
 

@@ -1,0 +1,112 @@
+.contact {
+  background: linear-gradient(
+      105deg,
+      rgba(21, 31, 32, 1) 0%,
+      rgba(21, 31, 32, 0.95) 50%,
+      transparent 50%
+    ),
+    url(../../../images/form-img.jpeg) center center no-repeat / cover;
+}
+
+.input {
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  transition: all 0.8s;
+  font-size: 22px;
+}
+
+.input:focus {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  border-bottom: 2px solid #f5593d;
+}
+
+.submit-button {
+  background: #f5593d;
+  color: #eee;
+  transition: all 0.3s;
+}
+
+.submit-button:hover {
+  background: #f9793d;
+  transform: translateY(-3px);
+}
+
+.label {
+  color: #777;
+  display: block;
+  margin-top: -70px;
+  margin-left: 4px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.input:placeholder-shown + .label {
+  transform: translate(20px, 20px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 992px) {
+  .contact {
+    background: linear-gradient(rgba(21, 31, 32, 1), rgba(21, 31, 32, 0.95));
+  }
+
+  .contact-form {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* .rmdb-header {
+  width: 100%;
+  height: auto;
+  background: #1c1c1c;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.rmdb-header-content {
+  max-width: 1280px;
+  min-height: 120px;
+  height: auto;
+  padding: 20px 0px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.rmdb-logo {
+  width: 300px;
+  margin-top: 20px;
+  float: left;
+}
+
+.rmdb-tmdb-logo {
+  width: 122px;
+  margin-top: 25px;
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .rmdb-header-content {
+    max-width: 1280px;
+    min-height: 0px;
+  }
+
+  .rmdb-tmdb-logo {
+    display: inline-block;
+    width: 80px;
+    margin-top: 0px;
+  }
+
+  .rmdb-logo {
+    width: 150px;
+    margin-top: 5px;
+  }
+} */

@@ -1,3 +1,4 @@
 find from: gene, language
+edit no image to src folder not in public, logo and contact images work fine !
 
 id movie rating favorite watchlist playlist

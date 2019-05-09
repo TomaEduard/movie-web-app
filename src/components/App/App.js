@@ -4,6 +4,7 @@ import Header from '../elements/Header/Header';
 import Home from '../Home/Home';
 import NotFound from '../elements/NotFound/NotFound';
 import Movie from '../Movie/Movie';
+import Contact from '../elements/Contact/Contact';
 
 
 // $(document).ready(function () {
@@ -33,6 +34,15 @@ const App = () => {
           <Route path="/:movieId" component={Movie} exact />
           <Route componet={NotFound} />
         </Switch>
+
+        <Contact />
+
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
 
       </React.Fragment>
 

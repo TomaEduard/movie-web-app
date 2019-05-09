@@ -1,3 +1,13 @@
+/* .rmdb-logo {
+  background: linear-gradient(
+      105deg,
+      rgba(21, 31, 32, 1) 0%,
+      rgba(21, 31, 32, 0.95) 50%,
+      transparent 50%
+    ),
+    url(../../../images/1asd.png) center center no-repeat / cover;
+} */
+
 .navbar img {
   height: auto;
   width: 150px;

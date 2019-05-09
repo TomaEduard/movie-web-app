@@ -1,4 +1,25 @@
-.rmdb-loadmorebtn {
+.btn {
+}
+
+.btn p {
+  font-weight: bold;
+  font-size: 22px;
+  padding-top: 13px;
+  /* padding: 10px; */
+}
+
+.btn {
+  color: #000000;
+  background-color: rgb(241, 206, 2);
+  /* border-color: #343a40; */
+}
+
+.btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* .rmdb-loadmorebtn {
   background: #16d47b;
   width: 100%;
   min-height: 50px;
@@ -15,4 +36,4 @@
 
 .rmdb-loadmorebtn:hover {
   opacity: 0.8;
-}
+} */
