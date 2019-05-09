@@ -5,6 +5,7 @@ import Home from '../Home/Home';
 import NotFound from '../elements/NotFound/NotFound';
 import Movie from '../Movie/Movie';
 import Contact from '../elements/Contact/Contact';
+import Footer from '../elements/Footer/Footer';
 
 
 // $(document).ready(function () {
@@ -35,14 +36,7 @@ const App = () => {
           <Route componet={NotFound} />
         </Switch>
 
-        <Contact />
-
-        <br>
-        </br>
-        <br>
-        </br>
-        <br>
-        </br>
+        <Footer />
 
       </React.Fragment>
 

@@ -1,10 +1,10 @@
 .loader {
   border: 5px solid #e0cfcf; /* Light grey */
   border-top: 5px solid #16d47b; /* Blue */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 0.8s linear infinite;
+  border-radius: 89%;
+  width: 60px;
+  height: 60px;
+  animation: spin 0.5s linear infinite;
   margin: 20px auto;
 }
 

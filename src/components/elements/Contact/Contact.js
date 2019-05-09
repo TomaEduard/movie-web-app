@@ -5,24 +5,9 @@ import './Contact.css';
 
 const Contact = () => {
 
-  // var bg = require('./images/1asd.png');
-  // var bg = require('../../../../public/images/form-img.jpeg');
-  // url(../../../../public/images/form-img.jpeg)
-
-  // src="./images/1asd.png"
   return (
 
-    <section className="contact p-5">
-
-      {/* <img className="rmdb-logo"
-        src="./images/form-img.jpeg"
-        style={{
-          background: 'no-repeat center center no-repeat / cover',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      /> */}
+    <section className="contact p-5 ">
 
       <div className="container-fluid">
         <div className="row">

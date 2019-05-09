@@ -7,6 +7,7 @@ import MovieThumb from '../elements/MovieThumb/MovieThumb';
 import LoadMoreBtn from '../elements/LoadMoreBtn/LoadMoreBtn';
 import Spinner from '../elements/Spinner/Spinner';
 import './Home.css';
+import Contact from '../elements/Contact/Contact';
 
 class Home extends Component {
   state = {
@@ -116,11 +117,10 @@ class Home extends Component {
             <LoadMoreBtn text="Load More" onClick={this.loadMoreItems} /> : null}
         </div>
 
-        <br>
-        </br>
-        <br>
-        </br>
+        <br></br>
+        <br></br>
 
+        <Contact />
 
       </div>
     )
