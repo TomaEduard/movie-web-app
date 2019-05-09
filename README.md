@@ -1,6 +1,6 @@
-# Movie-App
+# M.app (frontend)
 
-Didactic project that aims to use elementary things for the purpose of learning. This application is the front-end side that uses public API (mdb) to display and sort movies. Below the deployment sessions find the links attached to each component.
+Didactic project that aims to use elementary things for the purpose of learning. This application is the frontend side that uses public API (mdb) to display and sort movies. Below the deployment sessions find the links attached to each component.
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Deployment
 
-- [Back-end](https://github.com/TomaEduard/movie-app-api)
+- [Backend](https://github.com/TomaEduard/movie-app-api)
 
 ## Built With
 
