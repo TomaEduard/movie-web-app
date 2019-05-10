@@ -1,4 +1,13 @@
 find from: gene, language
 edit no image to src folder not in public, logo and contact images work fine !
 
+background image 
+MovieInfo.css
+.fa-file-video {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: rgba(255, 255, 255, 0.856);
+}
+
 id movie rating favorite watchlist playlist

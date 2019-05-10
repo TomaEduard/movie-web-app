@@ -10,8 +10,9 @@
 }
 
 .rmdb-actor-name {
-  font-size: 22px;
-  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
   float: left;
   margin: 10px 20px;
   width: 40%;
@@ -19,8 +20,8 @@
 }
 
 .rmdb-actor-character {
-  font-size: 18px;
-  color: #fff;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
   float: left;
   margin: 0 20px 10px 20px;
   width: 40%;

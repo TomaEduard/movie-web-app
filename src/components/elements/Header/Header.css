@@ -36,6 +36,11 @@
   color: #fed90f;
 }
 
+a.text-light:focus,
+a.text-light:hover {
+  color: #fed90f !important;
+}
+
 .line1,
 .line2,
 .line3 {

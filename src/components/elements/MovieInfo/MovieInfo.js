@@ -52,20 +52,24 @@ const MovieInfo = (props) => {
               </div>
 
               <div className="hearth">
-                <div className="fas fa-heart fa-2x"></div>
-                <div className="far fa-heart fa-2x"></div>
+                <div className="fas fa-heart fa-2x pl-2"></div>
+                <div className="far fa-heart fa-2x pl-2"></div>
               </div>
 
+              <div className="fas fa-history watch fa-2x pl-2" pl-2></div>
 
-              <div className="fas fa-history watch fa-2x"></div>
+              <div className="fas fa-clipboard-list fa-2x pl-2 text-success"></div>
+              <div className="fas fa-list-ol fa-2x pl-2 text-success"></div>
+              <div className="fas fa-list-ul fa-2x pl-2 text-success"></div>
+              <div className="far fa-list-alt fa-2x pl-2 text-success"></div>
+              <div className="fas fa-th-list fa-2x pl-2 text-success"></div>
 
-              <p>favorite movie</p>
-              <p>watch movie</p>
+
             </div>
           </div>
 
         </div>
-        <div className="fas fa-film fa-6x" name="film" />
+        <div className="far fa-file-video fa-6x" name="film" />
       </div>
     </div>
   )

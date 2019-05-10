@@ -10,10 +10,11 @@
 
 .rmdb-grid-element {
   margin: 0 31px 31px 0;
-  background: #353535;
+  background: #ffffff;
   max-height: 430px;
   animation: animateGrid 0.5s;
   overflow: hidden;
+  /* box-shadow: 10px 10px 5px grey; */
 }
 
 @keyframes animateGrid {

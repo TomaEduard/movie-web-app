@@ -67,6 +67,10 @@ const Header = () => {
           <li className="nav-item">
             <Link to="#" class="nav-link m-2 menu-item">Community</Link>
           </li>
+          <li className="nav-item">
+            <Link to="#" class="fas fa-ellipsis-v fa-2x mt-3 text-light pr-3"></Link>
+          </li>
+
         </ul>
       </div>
     </nav>
