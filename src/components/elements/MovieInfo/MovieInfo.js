@@ -56,7 +56,7 @@ const MovieInfo = (props) => {
                 <div className="far fa-heart fa-2x pl-2"></div>
               </div>
 
-              <div className="fas fa-history watch fa-2x pl-2" pl-2></div>
+              <div className="fas fa-history watch fa-2x pl-2"></div>
 
               <div className="fas fa-clipboard-list fa-2x pl-2 text-success"></div>
               <div className="fas fa-list-ol fa-2x pl-2 text-success"></div>

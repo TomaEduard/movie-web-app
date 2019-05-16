@@ -38,7 +38,7 @@ const Header = () => {
       </div>
 
       <button
-        class="navbar-toggler nav-button"
+        className="navbar-toggler nav-button"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNavAltMarkup"
@@ -46,9 +46,9 @@ const Header = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <div class="bg-light line1"></div>
-        <div class="bg-light line2"></div>
-        <div class="bg-light line3"></div>
+        <div className="bg-light line1"></div>
+        <div className="bg-light line2"></div>
+        <div className="bg-light line3"></div>
       </button>
 
       <div className="collapse navbar-collapse justify-content-end font-weight-bold" id="navbarNavAltMarkup">
@@ -56,19 +56,19 @@ const Header = () => {
         {/* nav-active */}
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="#" class="nav-link m-2 menu-item">Sign Up / Log In</Link>
+            <Link to="#" className="nav-link m-2 menu-item">Sign Up / Log In</Link>
           </li>
           <li className="nav-item">
-            <Link to="#" class="nav-link m-2 menu-item">FAQ</Link>
+            <Link to="#" className="nav-link m-2 menu-item">FAQ</Link>
           </li>
           <li className="nav-item">
-            <Link to="#" class="nav-link m-2 menu-item">Contact</Link>
+            <Link to="#" className="nav-link m-2 menu-item">Contact</Link>
           </li>
           <li className="nav-item">
-            <Link to="#" class="nav-link m-2 menu-item">Community</Link>
+            <Link to="#" className="nav-link m-2 menu-item">Community</Link>
           </li>
           <li className="nav-item">
-            <Link to="#" class="fas fa-ellipsis-v fa-2x mt-3 text-light pr-3"></Link>
+            <Link to="#" className="fas fa-ellipsis-v fa-2x mt-3 text-light pr-3"></Link>
           </li>
 
         </ul>
