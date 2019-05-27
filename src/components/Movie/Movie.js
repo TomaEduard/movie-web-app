@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { API_URL, API_KEY } from '../../config';
+import { API_URL, API_KEY, LOCAL_API_URL } from '../../config';
 import Navigation from '../elements/Navigation/Navigation';
 import MovieInfo from '../elements/MovieInfo/MovieInfo';
 import MovieInfoBar from '../elements/MovieInfoBar/MovieInfoBar';
@@ -13,14 +13,42 @@ class Movie extends Component {
     movie: null,
     actors: null,
     directors: [],
-    loading: false
+    loading: false,
+
+    rating: null,
+    favorite: false,
+    watchlist: false
   }
 
   componentDidMount() {
+
     this.setState({ loading: true })
-    // First fetch the movie ...
+
+    // fetch the movie from open API
     const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
     this.fetchItems(endpoint);
+
+    // fetch the properties movie from local API
+    const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
+    this.fetchLocalItem(request);
+  }
+
+  fetchLocalItem = (request) => {
+    fetch(request)
+      .then(result => result.json())
+      .then(result => {
+
+        this.setState({
+          favorite: result.favorite,
+          rating: result.rating,
+          watchlist: result.watchlist
+        })
+
+        console.log(this.state.favorite);
+      })
+
+    // console.log(favorite);
+
   }
 
   fetchItems = (endpoint) => {
@@ -28,6 +56,8 @@ class Movie extends Component {
       .then(result => result.json())
       .then(result => {
         console.log(result)
+        console.log(this.props.match.params.movieId)
+
         if (result.status_code) {
           this.setState({ loading: false });
         } else {
@@ -37,6 +67,8 @@ class Movie extends Component {
             fetch(endpoint)
               .then(result => result.json())
               .then(result => {
+                console.log(result)
+
                 const directors = result.crew.filter((member) => member.job === "Director");
 
                 this.setState({
@@ -62,7 +94,11 @@ class Movie extends Component {
 
             <MovieInfo
               movie={this.state.movie}
-              directors={this.state.directors} />
+              directors={this.state.directors}
+              rating={this.state.rating}
+              favorite={this.state.favorite}
+              watchlist={this.state.watchlist}
+            />
 
             <MovieInfoBar
               time={this.state.movie.runtime}

@@ -4,6 +4,7 @@ import MovieThumb from '../MovieThumb/MovieThumb';
 import './MovieInfo.css';
 
 const MovieInfo = (props) => {
+
   return (
     <div className="rmdb-movieinfo"
       style={{
@@ -40,8 +41,10 @@ const MovieInfo = (props) => {
 
           <br>
           </br>
+
+
           <div className="container">
-            <div className="row">
+            <div className="row pt-4">
               <div className="star">
                 <div className="fas fa-star fa-2x"></div>
                 <div className="fas fa-star fa-2x"></div>
@@ -51,6 +54,10 @@ const MovieInfo = (props) => {
                 <div className="far fa-star fa-2x"></div>
               </div>
 
+              <h4 className="pl-2">3.0/5.0</h4>
+            </div>
+
+            <div className="row pt-3 pb-5">
               <div className="hearth">
                 <div className="fas fa-heart fa-2x pl-2"></div>
                 <div className="far fa-heart fa-2x pl-2"></div>

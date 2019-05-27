@@ -7,28 +7,12 @@ import Movie from '../Movie/Movie';
 import Contact from '../elements/Contact/Contact';
 import Footer from '../elements/Footer/Footer';
 
-
-// $(document).ready(function () {
-//   $('.nav-button').click(function () {
-//     $('.nav-button').toggleClass('change');
-//   });
-
-//   $(window).scroll(function () {
-//     let position = $(this).scrollTop();
-//     if (position >= 200) {
-//       $('.nav-menu').addClass('custom-navbar');
-//     } else {
-//       $('.nav-menu').removeClass('custom-navbar');
-//     }
-//   });
-// });
-
 const App = () => {
   return (
     <BrowserRouter>
 
       <React.Fragment>
-        <Header />
+        <Header /> 
 
         <Switch>
           <Route path="/" component={Home} exact />

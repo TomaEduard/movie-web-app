@@ -6,7 +6,7 @@ const MovieInfoBar = (props) => {
   return (
     <div className="rmdb-movieinfobar bg-dark text-light">
       <div className="container pb-3">
-        <div className="row p-3">
+        <div className="row">
 
           <div className="col-md">
             <div className="fas fa-clock fa-2x famarginleft" name="clock-o" />
