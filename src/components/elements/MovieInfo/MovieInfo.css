@@ -47,6 +47,7 @@
 }
 
 .rmdb-movieinfo-text h1 {
+  /* font-weight: bold; */
   font-size: 48px;
   margin: 0;
 }
@@ -54,7 +55,7 @@
 .rmdb-movieinfo-text h3 {
   font-size: 16px;
   line-height: 0;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .rmdb-movieinfo-text p {
@@ -137,4 +138,22 @@ meter::-webkit-meter-even-less-good-value {
     width: auto;
     overflow: hidden;
   }
+}
+
+h2.display-5.asd {
+  position: relative;
+  padding-left: 58px;
+  /* color: #fbb450; */
+}
+
+span.rating-size {
+  font-weight: bold;
+  font-size: 55px;
+}
+
+h3 {
+  font-weight: bold;
+  padding-bottom: 7px;
+  margin-top: 20px;
+  padding-top: 0px;
 }

@@ -4,7 +4,7 @@ import Header from '../elements/Header/Header';
 import Home from '../Home/Home';
 import NotFound from '../elements/NotFound/NotFound';
 import Movie from '../Movie/Movie';
-import Contact from '../elements/Contact/Contact';
+// import Contact from '../elements/Contact/Contact';
 import Footer from '../elements/Footer/Footer';
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     <BrowserRouter>
 
       <React.Fragment>
-        <Header /> 
+        <Header />
 
         <Switch>
           <Route path="/" component={Home} exact />

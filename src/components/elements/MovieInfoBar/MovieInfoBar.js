@@ -25,7 +25,7 @@ const MovieInfoBar = (props) => {
 
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 

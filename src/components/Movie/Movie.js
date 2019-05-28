@@ -6,6 +6,7 @@ import MovieInfoBar from '../elements/MovieInfoBar/MovieInfoBar';
 import FourColGrid from '../elements/FourColGrid/FourColGrid';
 import Actor from '../elements/Actor/Actor';
 import Spinner from '../elements/Spinner/Spinner';
+import Stars from '../Stars/Stars1';
 import './Movie.css';
 
 class Movie extends Component {
@@ -17,8 +18,42 @@ class Movie extends Component {
 
     rating: null,
     favorite: false,
-    watchlist: false
+    watchlist: false,
+
   }
+
+  changeRating = (newRating) => {
+
+    this.setState({
+      rating: newRating.toFixed(1),
+    })
+
+    var data = {
+      "favorite": true,
+      "id": 299534,
+      "name": ":D",
+      "rating": newRating,
+      watchlist: false
+    }
+
+    fetch('http://localhost:8083/movies', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(function (response) {
+        return response.json();
+      })
+    // .then(function (myJson) {
+    //   console.log(JSON.stringify(myJson));
+    // });
+
+  }
+
+
 
   componentDidMount() {
 
@@ -40,23 +75,21 @@ class Movie extends Component {
 
         this.setState({
           favorite: result.favorite,
-          rating: result.rating,
+          rating: result.rating.toFixed(1),
           watchlist: result.watchlist
         })
 
-        console.log(this.state.favorite);
+        console.log("Movie - favorite - " + this.state.favorite);
+        console.log("Movie - rating - " + this.state.rating);
+        console.log("Movie - watchlist - " + this.state.watchlist);
       })
-
-    // console.log(favorite);
-
   }
 
   fetchItems = (endpoint) => {
     fetch(endpoint)
       .then(result => result.json())
       .then(result => {
-        console.log(result)
-        console.log(this.props.match.params.movieId)
+        console.log("Movie - this.props.match.params.movieId - " + this.props.match.params.movieId)
 
         if (result.status_code) {
           this.setState({ loading: false });
@@ -98,6 +131,9 @@ class Movie extends Component {
               rating={this.state.rating}
               favorite={this.state.favorite}
               watchlist={this.state.watchlist}
+              movieId={this.props.match.params.movieId}
+
+              changeRating={this.changeRating}
             />
 
             <MovieInfoBar
@@ -105,6 +141,8 @@ class Movie extends Component {
               budget={this.state.movie.budget}
               revenue={this.state.movie.revenue}
             />
+
+            <Stars />
 
           </div>
 

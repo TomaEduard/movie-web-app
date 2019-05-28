@@ -17,29 +17,28 @@ const Contact = () => {
 
               <div className="form-group py-4">
                 <input type="text" className="form-control my-2 p-2 input" placeholder="Name" />
-                <label for="name" class="label">Name</label>
+                <label className="label">Name</label>
               </div>
 
               <div className="form-group py-4">
-                <input type="email" class="form-control my-2 p-2 input" placeholder="Email Address" />
-                <label for="email" class="label">Email Address</label>
+                <input type="email" className="form-control my-2 p-2 input" placeholder="Email Address" />
+                <label className="label">Email Address</label>
               </div>
 
-              <div class="form-group py-4 my-4">
-                <input type="checkbox" checked />
-                <label for="check" class="text-white pl-2">Send Announcemets</label>
+              <div className="form-group py-4 my-4">
+                <input type="checkbox" />
+                <label className="text-white pl-2">Send Announcemets</label>
               </div>
 
               <button type="submit"
-                class="btn btn-block p-2 font-weight-bold text-uppercase submit-button">Subscribe</button>
+                className="btn btn-block p-2 font-weight-bold text-uppercase submit-button">Subscribe</button>
 
             </form>
           </div>
         </div>
       </div>
 
-
-    </section >
+    </section>
 
   )
 }
