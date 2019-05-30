@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Media from "react-media";
+// import { Link } from 'react-router-dom';
+// import Media from "react-media";
 import './Footer.css';
-import Contact from '../Contact/Contact';
+// import Contact from '../Contact/Contact';
 
 const Footer = () => {
 
@@ -120,9 +120,7 @@ const Footer = () => {
                 <i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
 
             </div>
-
           </div>
-
         </div>
       </div>
 

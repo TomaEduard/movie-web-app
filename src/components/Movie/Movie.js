@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { API_URL, API_KEY, LOCAL_API_URL } from '../../config';
+import { API_URL, API_KEY } from '../../config';
 import Navigation from '../elements/Navigation/Navigation';
 import MovieInfo from '../elements/MovieInfo/MovieInfo';
 import MovieInfoBar from '../elements/MovieInfoBar/MovieInfoBar';
 import FourColGrid from '../elements/FourColGrid/FourColGrid';
 import Actor from '../elements/Actor/Actor';
 import Spinner from '../elements/Spinner/Spinner';
-import Stars from '../Stars/Stars1';
 import './Movie.css';
 
 class Movie extends Component {
@@ -16,24 +15,23 @@ class Movie extends Component {
     directors: [],
     loading: false,
 
-    rating: null,
-    favorite: false,
+    rating: "-",
+    favorite: null,
     watchlist: false,
-
   }
 
+  // function for rating
   changeRating = (newRating) => {
-
     this.setState({
       rating: newRating.toFixed(1),
     })
 
     var data = {
-      "favorite": true,
-      "id": 299534,
-      "name": ":D",
+      "favorite": this.state.favorite,
+      "id": this.props.match.params.movieId,
+      "name": this.state.movie.original_title,
       "rating": newRating,
-      watchlist: false
+      watchlist: this.state.watchlist
     }
 
     fetch('http://localhost:8083/movies', {
@@ -50,22 +48,54 @@ class Movie extends Component {
     // .then(function (myJson) {
     //   console.log(JSON.stringify(myJson));
     // });
-
+    console.log("changeRating - ", data);
   }
 
+  // function for favorite
+  changeFavorite = (newValue) => {
+    console.log("#1 changeFavorite: ", this.state.favorite);
 
+    this.setState({
+      favorite: newValue,
+    });
+
+    console.log("Movie - changeFavorite - newValue -", newValue);
+
+    var data = {
+      "favorite": newValue,
+      "id": this.props.match.params.movieId,
+      "name": this.state.movie.original_title,
+      "rating": this.state.rating,
+      watchlist: this.state.watchlist
+    }
+
+    fetch('http://localhost:8083/movies', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(function (response) {
+        return response.json();
+      })
+    // .then(function (myJson) {
+    //   console.log(JSON.stringify(myJson));
+    // });
+    console.log("changeRating - ", data);
+  }
 
   componentDidMount() {
-
     this.setState({ loading: true })
 
     // fetch the movie from open API
     const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
-    this.fetchItems(endpoint);
+    this.fetchItems(endpoint); // Online API #1, #2
 
     // fetch the properties movie from local API
     const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
-    this.fetchLocalItem(request);
+    this.fetchLocalItem(request); // Local API
   }
 
   fetchLocalItem = (request) => {
@@ -75,33 +105,33 @@ class Movie extends Component {
 
         this.setState({
           favorite: result.favorite,
-          rating: result.rating.toFixed(1),
-          watchlist: result.watchlist
+          watchlist: result.watchlist,
+          rating: result.rating,
         })
+        console.log("Movie - local API: ", result);
+        console.log("Movie - favorite-state: ", this.state.favorite);
 
-        console.log("Movie - favorite - " + this.state.favorite);
-        console.log("Movie - rating - " + this.state.rating);
-        console.log("Movie - watchlist - " + this.state.watchlist);
       })
+
   }
 
   fetchItems = (endpoint) => {
     fetch(endpoint)
       .then(result => result.json())
       .then(result => {
-        console.log("Movie - this.props.match.params.movieId - " + this.props.match.params.movieId)
-
+        console.log("Movie - #1 Online API: ", result);
         if (result.status_code) {
           this.setState({ loading: false });
         } else {
+          // save the movie in movie state
           this.setState({ movie: result }, () => {
+
             // ... then fetch actors in the setState callback function
             const endpoint = `${API_URL}movie/${this.props.match.params.movieId}/credits?api_key=${API_KEY}`;
             fetch(endpoint)
               .then(result => result.json())
               .then(result => {
-                console.log(result)
-
+                console.log("Movie - #2 Online API: ", result);
                 const directors = result.crew.filter((member) => member.job === "Director");
 
                 this.setState({
@@ -117,10 +147,14 @@ class Movie extends Component {
   }
 
   render() {
+
+    // console.log("Movie - changeFavorite!: ", this.changeFavorite);
+
     return (
       <div className="rmdb-movie">
         {/* Check if have any movie in the state */}
-        {this.state.movie ?
+
+        {this.state.movie &&
           <div>
 
             <Navigation movie={this.state.movie} />
@@ -129,11 +163,16 @@ class Movie extends Component {
               movie={this.state.movie}
               directors={this.state.directors}
               rating={this.state.rating}
-              favorite={this.state.favorite}
               watchlist={this.state.watchlist}
               movieId={this.props.match.params.movieId}
+              title={this.state.movie.original_title}
 
+              favorite={this.state.favorite}
+
+              // function
               changeRating={this.changeRating}
+              changeFavorite={this.changeFavorite}
+
             />
 
             <MovieInfoBar
@@ -142,13 +181,10 @@ class Movie extends Component {
               revenue={this.state.movie.revenue}
             />
 
-            <Stars />
-
           </div>
+        }
 
-          : null}
         {/* Check if have any actors */}
-
         {this.state.actors ?
           <div className="rmdb-movie-grid">
             <FourColGrid header={'Actors'}>

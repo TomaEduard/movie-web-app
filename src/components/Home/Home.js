@@ -79,6 +79,7 @@ class Home extends Component {
   render() {
     return (
       <div className="rmdb-home">
+
         {this.state.heroImage ?
           <div>
             <HeroImage
@@ -90,6 +91,7 @@ class Home extends Component {
             <SearchBar callback={this.searchItems} />
 
           </div> : null}
+
         <div className="rmdb-home-grid">
 
           <FourColGrid

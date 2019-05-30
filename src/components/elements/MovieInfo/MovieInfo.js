@@ -1,10 +1,11 @@
 import React from 'react';
 import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../../../config';
 import MovieThumb from '../MovieThumb/MovieThumb';
-
 // import RatingWidget from '../Rating/Rating';
 import './MovieInfo.css';
-import Stars from '../../Stars/Stars1';
+import Stars from '../../../react-stars';
+import Hearth from '../Hearth/Hearth';
+// import { Link } from 'react-router-dom';
 
 const MovieInfo = (props) => {
 
@@ -14,21 +15,17 @@ const MovieInfo = (props) => {
     half: true,
     value: props.rating,
     onChange: newValue => {
-      console.log(`MovieInfo - thirdExample - New value is ${newValue}`)
+      // console.log(`MovieInfo - thirdExample - New value is ${newValue}`)
 
-      console.log("MovieInfo - props - ", props);
+      // console.log("MovieInfo - props - ", props);
 
+      // function
       props.changeRating(newValue)
-      console.log("MovieInfo - favorite - " + props.favorite);
-      console.log("MovieInfo - oldrating - " + props.rating);
-      console.log("MovieInfo - watchlist - " + props.watchlist);
-      console.log("MovieInfo - movieId - " + props.movieId)
-      console.log("MovieInfo - newRating - " + props.movieId)
+
     }
   }
 
-
-
+  // console.log("MovieInfo - changeFavorite - ", props.changeFavorite);
 
   return (
     <div className="rmdb-movieinfo"
@@ -38,14 +35,18 @@ const MovieInfo = (props) => {
     >
 
       <div className="rmdb-movieinfo-content">
+
         <div className="rmdb-movieinfo-thumb">
           <MovieThumb
             image={props.movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${props.movie.poster_path}` : './images/no_image.jpg'}
             clickable={false}
           />
         </div>
+
         <div className="rmdb-movieinfo-text">
+
           <h1>{props.movie.title}</h1>
+
           <p>{props.movie.overview}</p>
 
           <div className="container">
@@ -94,21 +95,32 @@ const MovieInfo = (props) => {
 
               <Stars {...thirdExample} />
 
-              <div className="div">
+              <div className="row pl-5">
 
-              </div>
-
-              <div className="div row pl-5">
-
-                <div className="hearth">
+                {/* <div className="hearth">
                   {/* <div className="fas fa-heart fa-2x pl-4"></div> */}
-                  <div className="far fa-heart fa-3x pl-4"></div>
-                </div>
+                {/* <Link to="#" className="far fa-heart fa-3x pl-4"></Link> */}
+                {/* </div>} */}
 
-                <div className="fas fa-history watch fa-3x pl-5"></div>
+
+                {/* Render element if props.favorite is true or false, but if isn't favorite icon will not show */}
+                {props.favorite === true || props.favorite === false ?
+                  <Hearth
+                    favorite={props.favorite}
+                    changeFavorite={props.changeFavorite}
+
+                  />
+                  : null}
+
+                {/* <Hearth
+                  favorite={props.favorite}
+                  changeFavorite={props.changeFavorite}
+                /> */}
+
+                <div className="fas fa-history watch fa-3x pl-5 pt-3"></div>
 
                 {/* <div className="fas fa-clipboard-list fa-2x pl-4 text-success"></div> */}
-                <div className="fas fa-list-ol fa-3x pl-5 text-success"></div>
+                <div className="fas fa-list-ol fa-3x pl-5 text-success pt-3"></div>
                 {/* <div className="fas fa-list-ul fa-2x pl-4 text-success"></div> */}
                 {/* <div className="far fa-list-alt fa-2x pl-4 text-success"></div> */}
                 {/* <div className="fas fa-th-list fa-2x pl-4 text-success"></div> */}
@@ -120,8 +132,13 @@ const MovieInfo = (props) => {
           </div>
 
         </div>
+
         <div className="far fa-file-video fa-6x" name="film" />
+
       </div>
+
+      {/* end of background image */}
+
     </div>
   )
 }

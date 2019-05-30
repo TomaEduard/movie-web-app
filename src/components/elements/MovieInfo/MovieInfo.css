@@ -157,3 +157,15 @@ h3 {
   margin-top: 20px;
   padding-top: 0px;
 }
+
+.fa-heart:before {
+  content: "\f004";
+  color: red;
+}
+
+.fa-heart:hover {
+  color: #fed90f;
+  fill: #fed90f;
+  background: #ee5f5b;
+  /* text-decoration: none; */
+}
