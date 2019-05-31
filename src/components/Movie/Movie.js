@@ -86,6 +86,41 @@ class Movie extends Component {
     console.log("changeRating - ", data);
   }
 
+  // function for watchlist
+  changeWatchList = (newValue) => {
+    console.log("#1 changeWatchList: ", this.state.watchlist);
+
+    this.setState({
+      watchlist: newValue,
+    });
+
+    console.log("Movie - changeWatchList - newValue -", newValue);
+
+    var data = {
+      "favorite": this.state.favorite,
+      "id": this.props.match.params.movieId,
+      "name": this.state.movie.original_title,
+      "rating": this.state.rating,
+      watchlist: newValue
+    }
+
+    fetch('http://localhost:8083/movies', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(function (response) {
+        return response.json();
+      })
+    // .then(function (myJson) {
+    //   console.log(JSON.stringify(myJson));
+    // });
+    console.log("changeWatchList - ", data);
+  }
+
   componentDidMount() {
     this.setState({ loading: true })
 
@@ -172,6 +207,7 @@ class Movie extends Component {
               // function
               changeRating={this.changeRating}
               changeFavorite={this.changeFavorite}
+              changeWatchList={this.changeWatchList}
 
             />
 

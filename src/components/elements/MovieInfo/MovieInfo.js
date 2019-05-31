@@ -5,6 +5,7 @@ import MovieThumb from '../MovieThumb/MovieThumb';
 import './MovieInfo.css';
 import Stars from '../../../react-stars';
 import Hearth from '../Hearth/Hearth';
+import WatchList from '../WatchLater/WatchList';
 // import { Link } from 'react-router-dom';
 
 const MovieInfo = (props) => {
@@ -63,7 +64,7 @@ const MovieInfo = (props) => {
 
               </div>
 
-              <div className="col-md-6">
+              <div className="col-md-6 pl-5">
                 {/* If have more then 1 director prind with S it not print DIRECTOR */}
                 {props.directors.length > 1 ? <h3>DIRECTORS</h3> : <h3>DIRECTOR</h3>}
 
@@ -112,15 +113,30 @@ const MovieInfo = (props) => {
                   />
                   : null}
 
-                {/* <Hearth
-                  favorite={props.favorite}
-                  changeFavorite={props.changeFavorite}
-                /> */}
+                {/* React.createElement(WatchList) */}
+                <div className="pl-5">
+                  <WatchList
+                    watchlist={props.watchlist}
+                    changeWatchList={props.changeWatchList}
+                  />
+                </div>
 
-                <div className="fas fa-history watch fa-3x pl-5 pt-3"></div>
+
+                {/* {props.watchlist === true || props.watchlist === false ?
+                  <WatchList
+                    watchlist={props.favorite}
+                    changeWatchList={props.changeWatchList}
+                  // changeFavorite={props.changeFavorite}
+                  />
+                  : null} */}
+
+                {/* <div className="fas fa-history watch fa-3x pl-5 pt-3"></div> */}
 
                 {/* <div className="fas fa-clipboard-list fa-2x pl-4 text-success"></div> */}
-                <div className="fas fa-list-ol fa-3x pl-5 text-success pt-3"></div>
+                <div className="pl-4">
+                  <div className="fas fa-list-ol fa-3x pl-5 text-success pt-3"></div>
+
+                </div>
                 {/* <div className="fas fa-list-ul fa-2x pl-4 text-success"></div> */}
                 {/* <div className="far fa-list-alt fa-2x pl-4 text-success"></div> */}
                 {/* <div className="fas fa-th-list fa-2x pl-4 text-success"></div> */}
