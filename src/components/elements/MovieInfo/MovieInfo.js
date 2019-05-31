@@ -26,6 +26,8 @@ const MovieInfo = (props) => {
     }
   }
 
+  // var newRating = props.rating;
+  // newRating.toFixed(1);
   // console.log("MovieInfo - changeFavorite - ", props.changeFavorite);
 
   return (

@@ -28,15 +28,15 @@ class WatchList extends Component {
     var iconStyle = {
       transform: this.props.watchlist ? 'translateY(-5px)' : 'none',
       boxShadow: this.props.watchlist ? '3px 3px 5px #000' : 'none',
-      color: this.props.watchlist ? "#fff" : "#aaa",
-      background: this.props.watchlist ? '#55acee' : '#222',
-      opacity: this.props.watchlist ? 0.9 : 0.5,
+      color: this.props.watchlist ? "#fff" : "rgb(255, 255, 255)",
+      background: this.props.watchlist ? '#55acee' : 'rgb(155, 155, 155)',
+      opacity: this.props.watchlist ? 0.9 : 0.4,
       transition: "all .4s",
       borderRadius: '50%',
-      height: 70,
-      width: 70,
+      height: 60,
+      width: 60,
       textAlign: 'center',
-      lineHeight: '70px',
+      lineHeight: '63px',
     };
 
     console.log("WatchList - props - ", this.props);

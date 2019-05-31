@@ -141,13 +141,13 @@ class Movie extends Component {
         this.setState({
           favorite: result.favorite,
           watchlist: result.watchlist,
-          rating: result.rating,
+          rating: result.rating.toFixed(1),
         })
         console.log("Movie - local API: ", result);
         console.log("Movie - favorite-state: ", this.state.favorite);
+        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXX ", this.state.rating);
 
       })
-
   }
 
   fetchItems = (endpoint) => {
