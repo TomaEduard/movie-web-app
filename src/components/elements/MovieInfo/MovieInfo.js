@@ -37,7 +37,7 @@ const MovieInfo = (props) => {
       }}
     >
 
-      <div className="rmdb-movieinfo-content">
+      <div className="container rmdb-movieinfo-content">
 
         <div className="rmdb-movieinfo-thumb">
           <MovieThumb
@@ -48,9 +48,9 @@ const MovieInfo = (props) => {
 
         <div className="rmdb-movieinfo-text">
 
-          <h1>{props.movie.title}</h1>
+          <h2>{props.movie.title}</h2>
 
-          <p>{props.movie.overview}</p>
+          <p className="description">{props.movie.overview}</p>
 
           <div className="container">
             <div className="row">
@@ -98,7 +98,7 @@ const MovieInfo = (props) => {
 
               <Stars {...thirdExample} />
 
-              <div className="row pl-5">
+              <div className="row pl-5 pt-2">
 
                 {/* <div className="hearth">
                   {/* <div className="fas fa-heart fa-2x pl-4"></div> */}
@@ -107,36 +107,29 @@ const MovieInfo = (props) => {
 
 
                 {/* Render element if props.favorite is true or false, but if isn't favorite icon will not show */}
-                {props.favorite === true || props.favorite === false ?
+                {/* {props.favorite === true || props.favorite === false || undefined ?
                   <Hearth
                     favorite={props.favorite}
                     changeFavorite={props.changeFavorite}
-
                   />
-                  : null}
+                  : null} */}
+
+                <Hearth
+                  favorite={props.favorite}
+                  changeFavorite={props.changeFavorite}
+                />
 
                 {/* React.createElement(WatchList) */}
-                <div className="pl-5">
+                <div className="WatchList">
                   <WatchList
                     watchlist={props.watchlist}
                     changeWatchList={props.changeWatchList}
                   />
                 </div>
 
-
-                {/* {props.watchlist === true || props.watchlist === false ?
-                  <WatchList
-                    watchlist={props.favorite}
-                    changeWatchList={props.changeWatchList}
-                  // changeFavorite={props.changeFavorite}
-                  />
-                  : null} */}
-
-                {/* <div className="fas fa-history watch fa-3x pl-5 pt-3"></div> */}
-
                 {/* <div className="fas fa-clipboard-list fa-2x pl-4 text-success"></div> */}
-                <div className="pl-4">
-                  <div className="fas fa-list-ol fa-3x pl-5 text-success pt-3"></div>
+                <div className="List">
+                  <div className="fas fa-list-ol fa-3x text-success pt-3"></div>
 
                 </div>
                 {/* <div className="fas fa-list-ul fa-2x pl-4 text-success"></div> */}

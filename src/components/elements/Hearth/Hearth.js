@@ -3,6 +3,13 @@ import './Hearth.css';
 
 const Hearth = (props) => {
 
+  // state = {
+  //   hovered: true,
+  //   setHovered: false,
+  // }
+
+  // const [hovered, setHovered] = useState(false);
+
   console.log("Hearth - favorite - ", props);
   // console.log("Hearth - changeFavorite - ", props.changeFavorite);
 
@@ -17,6 +24,12 @@ const Hearth = (props) => {
         // checked={true}
         // onChange={props.changeFavorite(!props.favorite)}
         onClick={() => props.changeFavorite(!props.favorite)}
+      // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
+      // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
+      // onMouseEnter={toggleHover}
+      // onMouseLeave={toggleHover}
+
+      // className={hovered ? 'data-toggle="tooltip" data-placement="left" title="Tooltip on left"' : ''}
 
       />
       {/* {props.favorite ? 'true' : 'false'} */}
@@ -32,9 +45,7 @@ const Hearth = (props) => {
               className="icon2"
               d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart"
               fill="#AAB8C2"
-
             />
-
 
             <circle id="main-circ" fill="#E2264D" opacity={0} cx="29.5" cy="29.5" r="1.5" />
             <g id="grp7" opacity={0} transform="translate(7 6)">

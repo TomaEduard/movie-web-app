@@ -15,7 +15,7 @@ class Movie extends Component {
     directors: [],
     loading: false,
 
-    rating: "-",
+    rating: null,
     favorite: null,
     watchlist: false,
   }
@@ -54,6 +54,16 @@ class Movie extends Component {
   // function for favorite
   changeFavorite = (newValue) => {
     console.log("#1 changeFavorite: ", this.state.favorite);
+
+    // if (newValue == null) {
+    //   this.setState({
+    //     favorite: false,
+    //   });
+    // } else {
+    //   this.setState({
+    //     favorite: !newValue,
+    //   });
+    // }
 
     this.setState({
       favorite: newValue,
@@ -138,17 +148,63 @@ class Movie extends Component {
       .then(result => result.json())
       .then(result => {
 
-        this.setState({
-          favorite: result.favorite,
-          watchlist: result.watchlist,
-          rating: result.rating.toFixed(1),
-        })
+        if (result.rating != null) {
+          this.setState({
+            favorite: result.favorite,
+            watchlist: result.watchlist,
+            rating: result.rating.toFixed(1),
+          })
+        } else {
+          this.setState({
+            favorite: result.favorite,
+            watchlist: result.watchlist,
+            rating: 0.0,
+          })
+        }
+
         console.log("Movie - local API: ", result);
         console.log("Movie - favorite-state: ", this.state.favorite);
-        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXX ", this.state.rating);
 
       })
   }
+
+
+  // fetchLocalItem = (request) => {
+  //   fetch(request)
+  //     .then(result => result.json())
+  //     .then(result => {
+
+  //       if (result.rating != null && result.favorite == undefined) {
+  //         this.setState({
+  //           favorite: false,
+  //           watchlist: result.watchlist,
+  //           rating: result.rating.toFixed(1),
+  //         });
+  //       } else if (result.rating == null && result.favorite != undefined) {
+  //         this.setState({
+  //           favorite: result.favorite,
+  //           watchlist: result.watchlist,
+  //           rating: 0,
+  //         });
+  //       } else if (result.rating != null && result.favorite != null) {
+  //         this.setState({
+  //           favorite: result.favorite,
+  //           watchlist: result.watchlist,
+  //           rating: result.rating.toFixed(1),
+  //         });
+  //       } else if (result.rating == null && result.favorite == null) {
+  //         this.setState({
+  //           favorite: false,
+  //           watchlist: result.watchlist,
+  //           rating: 0,
+  //         });
+  //       }
+
+  //       console.log("Movie - local API: ", result);
+  //       console.log("Movie - favorite-state: ", this.state.favorite);
+
+  //     })
+  // }
 
   fetchItems = (endpoint) => {
     fetch(endpoint)

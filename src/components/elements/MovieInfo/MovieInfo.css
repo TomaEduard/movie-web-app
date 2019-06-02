@@ -38,7 +38,7 @@
 .rmdb-movieinfo-text {
   height: 100%;
   width: auto;
-  padding: 40px;
+  padding: 22px;
   color: #fff;
   overflow: hidden;
   box-sizing: border-box;
@@ -114,7 +114,7 @@ meter::-webkit-meter-even-less-good-value {
   color: #36a1f0;
 }
 
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 1060px) {
   .rmdb-movieinfo-thumb {
     width: auto;
     height: 0%;
@@ -123,26 +123,13 @@ meter::-webkit-meter-even-less-good-value {
     padding-top: 3px;
     left: 0px;
   }
-
-  .rmdb-movieinfo-text {
-    left: 0px;
-  }
-
-  .rmdb-movieinfo-text h1 {
-    font-size: 21px;
-    margin: 0;
-  }
-
-  .fa-film {
-    height: 0%;
-    width: auto;
-    overflow: hidden;
-  }
-}
+} */
 
 h2.display-5.asd {
   position: relative;
+  padding-top: 46px;
   padding-left: 58px;
+  margin-bottom: 0px;
   /* color: #fbb450; */
 }
 
@@ -168,4 +155,70 @@ h3 {
   fill: #fed90f;
   background: #ee5f5b;
   /* text-decoration: none; */
+}
+
+@media screen and (max-width: 1060px) {
+  .rmdb-movieinfo-thumb {
+    width: auto;
+    height: 0%;
+    overflow: hidden;
+    position: absolute;
+    padding-top: 3px;
+    left: 0px;
+  }
+
+  .rmdb-movieinfo-text {
+    left: 0px;
+  }
+
+  .rmdb-movieinfo-text h1 {
+    font-size: 21px;
+    margin: 0;
+  }
+
+  .fa-film {
+    height: 0%;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+.pl-5,
+.px-5 {
+  padding-left: 6rem !important;
+}
+
+.WatchList {
+  padding-left: 3rem !important;
+}
+
+.List {
+  padding-left: 4rem !important;
+}
+
+@media screen and (max-width: 770px) {
+  .description {
+    width: 420px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h2.display-5.asd {
+    position: relative;
+    padding-top: 0px;
+    padding-left: 58px;
+    margin-bottom: 0px;
+    /* color: #fbb450; */
+  }
+
+  .pl-5,
+  .px-5 {
+    padding-left: 1rem !important;
+  }
+
+  .row {
+    /* position: absolute; */
+    /* left: 50%; */
+  }
 }
