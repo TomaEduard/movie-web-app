@@ -46,6 +46,85 @@
   left: 360px;
 }
 
+/* button toggle left */
+.btn-primary {
+  color: rgba(255, 255, 255, 0.534);
+  background-color: #f3f3f354;
+  border-color: #0000004d;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #ffffffc2;
+  border-color: #000000a4;
+}
+
+/* when button is active */
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  /* color: #fff; */
+  background-color: rgb(255, 255, 255);
+  border-color: #00000000;
+}
+
+.share-logo {
+  height: auto;
+  width: 27px;
+}
+
+.rating-logo {
+  height: auto;
+  width: 31px;
+}
+
+.heart-logo {
+  height: auto;
+  width: 31px;
+}
+
+.watchlist-logo {
+  height: auto;
+  width: 31px;
+}
+
+.playlist-logo {
+  height: auto;
+  width: 44px;
+  margin: 0px;
+}
+
+.edit-logo {
+  height: auto;
+  width: 26px;
+}
+
+.flag-logo {
+  height: auto;
+  width: 26px;
+}
+
+.download-logo {
+  height: auto;
+  width: 26px;
+}
+
+.embed-logo {
+  height: auto;
+  width: 26px;
+}
+
+.test1 {
+  font-family: "Montserrat", sans-serif;
+  color: #1d1d1d;
+  text-align: center;
+  padding-top: 9px !important;
+}
+
+button#dropdown-item-button.dropdown-toggle.btn.btn-primary::before {
+  color: black;
+}
+
 .rmdb-movieinfo-text h1 {
   /* font-weight: bold; */
   font-size: 48px;
@@ -198,7 +277,7 @@ h3 {
 
 @media screen and (max-width: 770px) {
   .description {
-    width: 420px;
+    width: 0px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Hearth.css';
 
 const Hearth = (props) => {
@@ -15,6 +16,8 @@ const Hearth = (props) => {
 
   return (
 
+
+
     <div id="main-content">
       <input
         type="checkbox"
@@ -24,10 +27,19 @@ const Hearth = (props) => {
         // checked={true}
         // onChange={props.changeFavorite(!props.favorite)}
         onClick={() => props.changeFavorite(!props.favorite)}
-      // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
-      // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
-      // onMouseEnter={toggleHover}
-      // onMouseLeave={toggleHover}
+        // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
+        // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
+        // onMouseEnter={toggleHover}
+        // onMouseLeave={toggleHover}
+
+        data-tip="tooltip"
+        data-delay-update='1000'
+
+
+
+      // onMouseEnter={() => {
+      //   ReactTooltip.show("asd")
+      // }}
 
       // className={hovered ? 'data-toggle="tooltip" data-placement="left" title="Tooltip on left"' : ''}
 
@@ -45,6 +57,11 @@ const Hearth = (props) => {
               className="icon2"
               d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart"
               fill="#AAB8C2"
+
+              data-tip='Favorite'
+              data-delay-update='1000'
+              data-place='bottom'
+              data-offset="{'bottom': 10, 'left': 0}"
             />
 
             <circle id="main-circ" fill="#E2264D" opacity={0} cx="29.5" cy="29.5" r="1.5" />
@@ -78,6 +95,14 @@ const Hearth = (props) => {
             </g>
           </g>
         </svg>
+
+        {/* <svg width='75' height='50'>
+          <circle data-tip='=( •̀‿•́)' data-for='svgTooltip2'
+            cx='25' cy='25' r='22' fill='#fff' stroke='#000' strokeWidth='4' />
+          <circle data-tip='=( ❂‿❂)' data-for='svgTooltip2'
+            cx='50' cy='25' r='16' fill='#fdf' stroke='#404' strokeWidth='4' />
+        </svg> */}
+
       </label>
     </div>
   )

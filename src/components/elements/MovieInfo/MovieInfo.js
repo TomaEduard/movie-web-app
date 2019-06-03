@@ -5,7 +5,9 @@ import MovieThumb from '../MovieThumb/MovieThumb';
 import './MovieInfo.css';
 import Stars from '../../../react-stars';
 import Hearth from '../Hearth/Hearth';
-import WatchList from '../WatchLater/WatchList';
+import WatchList from '../WatchList/WatchList';
+import PlayList from '../PlayList/PlayList';
+import { DropdownButton, Dropdown } from 'react-bootstrap'
 // import { Link } from 'react-router-dom';
 
 const MovieInfo = (props) => {
@@ -48,7 +50,95 @@ const MovieInfo = (props) => {
 
         <div className="rmdb-movieinfo-text">
 
-          <h2>{props.movie.title}</h2>
+          <div className="row ml-1">
+            <h2 className="">{props.movie.title}</h2>
+
+            <div className="ml-auto mr-3 ">
+
+              <DropdownButton id="dropdown-item-button"
+                drop="left"
+                title=""
+              >
+                <Dropdown.Item>
+                  <img className="share-logo pt-0 my-1"
+                    src="./../../../images/mn43.png"
+                    alt="./../../../images/no_image.jpg"
+
+                  />
+                  <span className="test1 pl-3">Share this Movie</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="rating-logo pt-0 my-1"
+                    src="./../../../images/img_169531.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Add Rating</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="heart-logo pt-0 my-1"
+                    src="./../../../images/favorite-heart-icon-21.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3 mt-5">Add to Favorite</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="watchlist-logo pt-0 my-1"
+                    src="./../../../images/Artboard_28-512.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Add to Watchlist</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="playlist-logo pt-0 my-1"
+                    src="./../../../images/Add_category-_playlist-512.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-1">Add to Playlist</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="edit-logo pt-0 my-1"
+                    src="./../../../images/026f3d3b617ad8234f2fb8f9b3b4d310.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Add Comment to Movie</span>
+                </Dropdown.Item>
+
+                <Dropdown.Divider />
+
+                <Dropdown.Item>
+                  <img className="flag-logo pt-0 my-1"
+                    src="./../../../images/fontawesome_flag_alt_868291.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Report Movie</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="download-logo pt-0 my-1"
+                    src="./../../../images/jsw-download-icon-2.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Download Post Movie</span>
+                </Dropdown.Item>
+
+                <Dropdown.Item>
+                  <img className="embed-logo pt-0 pb-2 my-1"
+                    src="./../../../images/embed.png"
+                    alt="./../../../images/no_image.jpg"
+                  />
+                  <span className="test1 pl-3">Emveded Post</span>
+                </Dropdown.Item>
+
+              </DropdownButton>
+            </div>
+
+
+          </div>
 
           <p className="description">{props.movie.overview}</p>
 
@@ -92,27 +182,10 @@ const MovieInfo = (props) => {
 
             <div className="row">
 
-              {/* <div className="div">
-                <RatingWidget />
-              </div> */}
-
               <Stars {...thirdExample} />
 
               <div className="row pl-5 pt-2">
 
-                {/* <div className="hearth">
-                  {/* <div className="fas fa-heart fa-2x pl-4"></div> */}
-                {/* <Link to="#" className="far fa-heart fa-3x pl-4"></Link> */}
-                {/* </div>} */}
-
-
-                {/* Render element if props.favorite is true or false, but if isn't favorite icon will not show */}
-                {/* {props.favorite === true || props.favorite === false || undefined ?
-                  <Hearth
-                    favorite={props.favorite}
-                    changeFavorite={props.changeFavorite}
-                  />
-                  : null} */}
 
                 <Hearth
                   favorite={props.favorite}
@@ -124,17 +197,21 @@ const MovieInfo = (props) => {
                   <WatchList
                     watchlist={props.watchlist}
                     changeWatchList={props.changeWatchList}
+                    // function
+                    changePlayList={props.changePlayList}
                   />
                 </div>
 
-                {/* <div className="fas fa-clipboard-list fa-2x pl-4 text-success"></div> */}
-                <div className="List">
-                  <div className="fas fa-list-ol fa-3x text-success pt-3"></div>
 
+                {/* <div className="fas fa-clipboard-list fa-2x pl-4 text-success"></div> */}
+
+
+                <div className="List">
+                  <PlayList
+                    playlist={props.playlist}
+                    changePlayList={props.changePlayList}
+                  />
                 </div>
-                {/* <div className="fas fa-list-ul fa-2x pl-4 text-success"></div> */}
-                {/* <div className="far fa-list-alt fa-2x pl-4 text-success"></div> */}
-                {/* <div className="fas fa-th-list fa-2x pl-4 text-success"></div> */}
 
               </div>
 

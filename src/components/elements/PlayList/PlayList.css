@@ -19,3 +19,17 @@ a.fa.fa-2x.fas.fa-history {
   text-decoration-color: initial;
   color: rgb(155, 155, 155);
 }
+
+.extraClass {
+  opacity: 1 !important;
+  font-size: 15px !important;
+  pointer-events: auto !important;
+  padding: 4px !important;
+  margin: 0px !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+.extraClass:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
+}

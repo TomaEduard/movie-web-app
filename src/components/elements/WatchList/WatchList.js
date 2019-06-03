@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip'
 import './WatchList.css';
 
 class WatchList extends Component {
@@ -19,10 +20,8 @@ class WatchList extends Component {
     this.props.changeWatchList(!this.props.watchlist);
 
     // console.log("this.props.href ", this.props.href);
-    console.log("this.props.href ", this.props.watchlist);
-
+    console.log("Wathlist - watchlist - ", this.props.watchlist);
   }
-
 
   render() {
     var iconStyle = {
@@ -30,7 +29,7 @@ class WatchList extends Component {
       boxShadow: this.props.watchlist ? '3px 3px 5px #000' : 'none',
       color: this.props.watchlist ? "#fff" : "rgb(255, 255, 255)",
       background: this.props.watchlist ? '#55acee' : 'rgb(155, 155, 155)',
-      opacity: this.props.watchlist ? 0.9 : 0.4,
+      opacity: this.props.watchlist ? 0.9 : 0.2,
       transition: "all .4s",
       borderRadius: '50%',
       height: 60,
@@ -41,12 +40,13 @@ class WatchList extends Component {
 
     console.log("WatchList - props - ", this.props);
 
+
     return (
       // React.createElement("a", { href: this.props.href },
       // React.createElement("a",
 
       <Link to="#" className="nav-link m-2 menu-item"
-        className="fa fa-2x fas fa-history"
+        className="fa fas fa-history fa-2x "
         // href: "#",
 
         // className: this.props.icon,
@@ -54,16 +54,38 @@ class WatchList extends Component {
 
         // onClick: () => this.handleHover(), onMouseLeave: () => this.handleHover(),
         onClick={() => this.onClick()}
-      // onMouseEnter: () => this.handleHover(), onMouseLeave: () => this.handleHover()
+        // onMouseEnter: () => this.handleHover(), onMouseLeave: () => this.handleHover()
+
+        data-tip='Watchlater'
+        data-delay-update='1000'
+        data-place='bottom'
+        data-offset="{'bottom': 10, 'left': 0}"
       >
+
+        <ReactTooltip
+          class='extraClass'
+          effect='solid'
+          aria-haspopup='true' role='example'
+        >
+        </ReactTooltip>
+
+        {/* <ReactTooltip
+          className='nav-link'
+          effect='solid'
+
+          type='error'
+        >
+          <span>Show happy face</span>
+        </ReactTooltip> */}
+
+
+
+
       </Link>
-
-
-
 
     )
 
-      // { this.state.hover ? 'true' : 'false' }
+      // {this.state.hover ? 'true' : 'false'}
 
       // )
       ;
@@ -74,3 +96,5 @@ class WatchList extends Component {
 }
 
 export default WatchList;
+
+

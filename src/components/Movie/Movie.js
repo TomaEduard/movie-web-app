@@ -18,6 +18,7 @@ class Movie extends Component {
     rating: null,
     favorite: null,
     watchlist: false,
+    playlist: false,
   }
 
   // function for rating
@@ -129,6 +130,17 @@ class Movie extends Component {
     //   console.log(JSON.stringify(myJson));
     // });
     console.log("changeWatchList - ", data);
+  }
+
+  // function for changePlayList
+  changePlayList = (newValue) => {
+    console.log("#1 changeWatchList: ", this.state.watchlist);
+
+    this.setState({
+      playlist: newValue,
+    });
+
+    console.log("Movie - changeWatchList - newValue -", newValue);
   }
 
   componentDidMount() {
@@ -257,13 +269,17 @@ class Movie extends Component {
               watchlist={this.state.watchlist}
               movieId={this.props.match.params.movieId}
               title={this.state.movie.original_title}
-
               favorite={this.state.favorite}
+
+              playlist={this.state.playlist}
+
 
               // function
               changeRating={this.changeRating}
               changeFavorite={this.changeFavorite}
               changeWatchList={this.changeWatchList}
+
+              changePlayList={this.changePlayList}
 
             />
 
