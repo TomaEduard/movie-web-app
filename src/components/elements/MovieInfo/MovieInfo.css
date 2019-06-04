@@ -17,10 +17,22 @@
   }
 }
 
+.rmdb-moviethumb img {
+  width: 367px;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .rmdb-movieinfo-content {
   max-width: 1280px;
   width: 100%;
-  height: 100%;
+  height: 560px;
   margin: 0 auto;
   background: rgb(0, 0, 0, 0.7);
   position: relative;
@@ -36,14 +48,18 @@
 }
 
 .rmdb-movieinfo-text {
-  height: 100%;
   width: auto;
   padding: 22px;
   color: #fff;
   overflow: hidden;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
   left: 360px;
+}
+
+.col-md-6 {
+  padding: 0px;
 }
 
 /* button toggle left */
@@ -70,48 +86,43 @@
 
 .share-logo {
   height: auto;
-  width: 27px;
+  width: 25px;
 }
 
 .rating-logo {
   height: auto;
-  width: 31px;
+  width: 27px;
 }
 
 .heart-logo {
   height: auto;
-  width: 31px;
+  width: 27px;
 }
 
 .watchlist-logo {
   height: auto;
-  width: 31px;
+  width: 27px;
 }
 
 .playlist-logo {
   height: auto;
-  width: 44px;
+  width: 40px;
   margin: 0px;
 }
 
 .edit-logo {
   height: auto;
-  width: 26px;
+  width: 22px;
 }
 
 .flag-logo {
   height: auto;
-  width: 26px;
+  width: 22px;
 }
 
 .download-logo {
   height: auto;
-  width: 26px;
-}
-
-.embed-logo {
-  height: auto;
-  width: 26px;
+  width: 22px;
 }
 
 .test1 {
@@ -134,33 +145,73 @@ button#dropdown-item-button.dropdown-toggle.btn.btn-primary::before {
 .rmdb-movieinfo-text h3 {
   font-size: 16px;
   line-height: 0;
-  /* margin-top: 30px; */
 }
 
 .rmdb-movieinfo-text p {
   font-size: 18px;
   line-height: 26px;
 }
-
+/* 
+/* IMDb rating */
 .rmdb-rating {
-  width: 250px;
+  width: 260px;
   height: 20px;
   margin-top: 20px;
   position: relative;
 }
 
-.rmdb-score {
+.rmdb-rating img {
+  width: 500px;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+/* IMDB score */
+/* .rmdb-score {
   position: absolute;
-  margin: 0;
-  right: 0px;
-  top: -3px;
+  margin-left: 0px;
+  right: -36px;
+  top: 33px;
+} */
+
+.rmdb-score {
+  position: relative;
+  margin-left: 0px;
+  right: -219px;
+  top: -31px;
+}
+
+/* bold first rating */
+h2.rmdb-score {
+  font-weight: bold;
+}
+
+/* normal weight /10 */
+.maxim-rating {
+  font-weight: normal !important;
+}
+
+/* IMDb logo */
+.imdb-logo {
+  background: no-repeat center center / cover;
+  padding-top: 10px;
+  height: 11vh;
+  opacity: 0.7;
+  padding-top: 30px;
+  margin-left: 25px;
+}
+
+.maxim-rating {
+  font-size: 20px;
 }
 
 .rmdb-director {
   margin: 0;
 }
-
-.fa-file-video {
+*/ .fa-file-video {
   position: absolute;
   bottom: 40px;
   right: 40px;
@@ -206,7 +257,7 @@ meter::-webkit-meter-even-less-good-value {
 
 h2.display-5.asd {
   position: relative;
-  padding-top: 46px;
+  padding-top: 0px;
   padding-left: 58px;
   margin-bottom: 0px;
   /* color: #fbb450; */
@@ -236,6 +287,28 @@ h3 {
   /* text-decoration: none; */
 }
 
+@media screen and (max-width: 1460px) {
+  .imdb-logo {
+    background: no-repeat center center / cover;
+    padding-top: 10px;
+    height: 11vh;
+    opacity: 0.7;
+    padding-top: 30px;
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .imdb-logo {
+    background: no-repeat center center / cover;
+    padding-top: 10px;
+    height: 11vh;
+    opacity: 0.7;
+    padding-top: 30px;
+    margin-left: 121px;
+  }
+}
+
 @media screen and (max-width: 1060px) {
   .rmdb-movieinfo-thumb {
     width: auto;
@@ -246,6 +319,15 @@ h3 {
     left: 0px;
   }
 
+  .imdb-logo {
+    background: no-repeat center center / cover;
+    padding-top: 10px;
+    height: 11vh;
+    opacity: 0.7;
+    padding-top: 30px;
+    margin-left: 160px;
+  }
+
   .rmdb-movieinfo-text {
     left: 0px;
   }
@@ -253,11 +335,25 @@ h3 {
   .rmdb-movieinfo-text h1 {
     font-size: 21px;
     margin: 0;
+    height: 210px;
   }
 
   .fa-film {
     height: 0%;
     width: auto;
+    overflow: hidden;
+  }
+
+  .rmdb-score {
+    position: absolute;
+    margin-left: 0px;
+    right: 3px;
+    top: 34px;
+  }
+
+  .rmdb-rating meter {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
   }
 }
@@ -273,6 +369,33 @@ h3 {
 
 .List {
   padding-left: 4rem !important;
+}
+
+@media screen and (max-width: 1045px) {
+  .rmdb-score {
+    position: relative;
+    margin-left: 0px;
+    right: -213px;
+    top: -34px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .rmdb-score {
+    position: absolute;
+    margin-left: 0px;
+    right: -137px;
+    top: 34px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rmdb-score {
+    position: absolute;
+    margin-left: 0px;
+    right: 88px;
+    top: 34px;
+  }
 }
 
 @media screen and (max-width: 770px) {
@@ -294,10 +417,5 @@ h3 {
   .pl-5,
   .px-5 {
     padding-left: 1rem !important;
-  }
-
-  .row {
-    /* position: absolute; */
-    /* left: 50%; */
   }
 }

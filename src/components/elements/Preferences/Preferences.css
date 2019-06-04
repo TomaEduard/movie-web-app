@@ -1,0 +1,55 @@
+.image {
+  max-width: 100%;
+  height: auto;
+
+  /* background-size: auto auto; */
+
+  background-size: contain;
+  /* width: 160px;
+  height: 160px; */
+
+  /* background: no-repeat center fixed;
+  background-repeat: no-repeat, repeat; */
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.radio-padding {
+  padding-top: 7px;
+  padding-right: 3px;
+}
+
+.padding-row2-row4-rating {
+  padding-top: 7px;
+}
+
+.category-text {
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.rating-inline-1 {
+  padding-top: 7px;
+  margin-right: 0px;
+}
+
+.stars {
+  color: #fdd784;
+  text-shadow: 1px 1px 2px #ccc;
+  font-size: 0.8em;
+}
+
+/* .custom-control-label:before {
+  background-color: red;
+} */
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #f7ac0b;
+  border-color: rgba(134, 134, 134, 0.411);
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #f7ac0b;
+  border-color: rgba(134, 134, 134, 0.411);
+}

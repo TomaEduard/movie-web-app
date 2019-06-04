@@ -1,25 +1,9 @@
 find from: gene, language
 
 
-1.
-add watchlist button
+- query local API
+- find to public API with id's received from local db
+- Add FroudColGrid
 
-twitter 
-https://codepen.io/naturalclar/pen/jmWWqG
+-edit MovieInfoBar change color to preferance top image and add some black/blur effect
 
-
-like button
-https://codepen.io/gowriprasanthvm/pen/dpKPYg
-
-
-hover effect
-https://www.tensorflow.org/install/lang_java      down to stars
-https://codepen.io/alfredrafael/pen/GaoYpg
-
-add list(cart) button
-
-Add tooltip when mouse over button show(add to favorite, etc)
-
-2.
-add new page for find by: name, favorite, watchlist, rating
-  -find to public API with id's received from local db

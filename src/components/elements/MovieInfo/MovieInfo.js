@@ -48,6 +48,7 @@ const MovieInfo = (props) => {
           />
         </div>
 
+
         <div className="rmdb-movieinfo-text">
 
           <div className="row ml-1">
@@ -93,7 +94,7 @@ const MovieInfo = (props) => {
                 </Dropdown.Item>
 
                 <Dropdown.Item>
-                  <img className="playlist-logo pt-0 my-1"
+                  <img className="playlist-logo pt-0 my-1 pl-0"
                     src="./../../../images/Add_category-_playlist-512.png"
                     alt="./../../../images/no_image.jpg"
                   />
@@ -119,20 +120,13 @@ const MovieInfo = (props) => {
                 </Dropdown.Item>
 
                 <Dropdown.Item>
-                  <img className="download-logo pt-0 my-1"
+                  <img className="download-logo pt-0 "
                     src="./../../../images/jsw-download-icon-2.png"
                     alt="./../../../images/no_image.jpg"
                   />
-                  <span className="test1 pl-3">Download Post Movie</span>
+                  <span className="test1 pl-3">Download Post</span>
                 </Dropdown.Item>
 
-                <Dropdown.Item>
-                  <img className="embed-logo pt-0 pb-2 my-1"
-                    src="./../../../images/embed.png"
-                    alt="./../../../images/no_image.jpg"
-                  />
-                  <span className="test1 pl-3">Emveded Post</span>
-                </Dropdown.Item>
 
               </DropdownButton>
             </div>
@@ -145,18 +139,38 @@ const MovieInfo = (props) => {
           <div className="container">
             <div className="row">
 
-              <div className="col-md-6">
+              <div className="col-md-4 col-sm-4 col-xs-4">
+
                 <h3>IMDB RATING</h3>
 
                 <div className="rmdb-rating">
                   <meter min="0" max="100" optimum="100" low="40" high="70" value={props.movie.vote_average * 10}></meter>
 
-                  <p className="rmdb-score">{props.movie.vote_average}</p>
                 </div>
+
+                <h2 className="rmdb-score">{props.movie.vote_average}
+                  <span className="maxim-rating">/ 10</span></h2>
 
               </div>
 
-              <div className="col-md-6 pl-5">
+              {/* <div className="col-md-5">
+
+                <h2 className="rmdb-score">{props.movie.vote_average} /
+                <span className="maxim-rating"> 10</span></h2>
+
+              </div> */}
+
+              <div className="col-md-4 col-sm-4 col-xs-4">
+
+                <img className="imdb-logo"
+                  src="./../../../images/IMDB001.png"
+                  alt="./../../../images/no_image.jpg"
+                />
+
+              </div>
+
+
+              <div className="col-md-2 col-sm-2 col-xs-2">
                 {/* If have more then 1 director prind with S it not print DIRECTOR */}
                 {props.directors.length > 1 ? <h3>DIRECTORS</h3> : <h3>DIRECTOR</h3>}
 
@@ -180,7 +194,7 @@ const MovieInfo = (props) => {
 
               </span> / 5.0</h2>
 
-            <div className="row">
+            <div className="row pl-4">
 
               <Stars {...thirdExample} />
 
@@ -220,6 +234,7 @@ const MovieInfo = (props) => {
           </div>
 
         </div>
+
 
         <div className="far fa-file-video fa-6x" name="film" />
 

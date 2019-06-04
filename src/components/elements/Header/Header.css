@@ -8,10 +8,9 @@
     url(../../../images/1asd.png) center center no-repeat / cover;
 } */
 
-.navbar img {
-  height: auto;
-  width: 150px;
-  margin-left: 125px;
+.linkasd {
+  /* font-weight: bold;
+  text-decoration: none; */
 }
 
 .nav-menu {
@@ -66,4 +65,59 @@ a.text-light:hover {
   padding: 5px 30px;
   background: #232f3e;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+}
+
+.link {
+  text-decoration: none;
+}
+
+.icon-header img {
+  /* height: auto; */
+  width: 131px;
+  margin-left: 36px;
+}
+
+.opacity {
+  opacity: 0.73;
+}
+
+.preferences-logo {
+  height: auto;
+  width: 26px;
+}
+
+.signOut-logo {
+  height: auto;
+  width: 19px;
+}
+
+.darkTheme-logo {
+  height: auto;
+  width: 27px;
+}
+
+.language-logo {
+  height: auto;
+  width: 27px;
+}
+
+.settings-logo {
+  height: auto;
+  width: 21px;
+  margin: 0px;
+}
+
+.help-logo {
+  height: auto;
+  width: 21px;
+}
+
+.feedback-logo {
+  height: auto;
+  width: 21px;
+}
+
+.download-logo {
+  height: auto;
+  width: 26px;
 }

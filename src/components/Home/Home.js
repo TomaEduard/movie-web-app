@@ -29,9 +29,7 @@ class Home extends Component {
     fetch(endpoint)
       .then(result => result.json())
       .then(result => {
-        console.log('OLD');
-        console.log(result);
-
+        console.log("Home - OLD - result ",result);
 
         this.setState({
           movies: [...this.state.movies, ...result.results],
@@ -40,8 +38,7 @@ class Home extends Component {
           currentPage: result.page,
           totalPages: result.total_pages
         })
-        console.log('NEW');
-        console.log(this.state.movies);
+        console.log("Home - OLD - this.state.movies ",this.state.movies);
       })
       .catch(error => console.error('Error:', error))
   }

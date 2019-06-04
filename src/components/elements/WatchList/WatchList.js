@@ -29,8 +29,8 @@ class WatchList extends Component {
       boxShadow: this.props.watchlist ? '3px 3px 5px #000' : 'none',
       color: this.props.watchlist ? "#fff" : "rgb(255, 255, 255)",
       background: this.props.watchlist ? '#55acee' : 'rgb(155, 155, 155)',
-      opacity: this.props.watchlist ? 0.9 : 0.2,
-      transition: "all .4s",
+      opacity: this.props.watchlist ? 0.95 : 0.3,
+      transition: "all .3s",
       borderRadius: '50%',
       height: 60,
       width: 60,
@@ -46,7 +46,7 @@ class WatchList extends Component {
       // React.createElement("a",
 
       <Link to="#" className="nav-link m-2 menu-item"
-        className="fa fas fa-history fa-2x "
+        className="fa fas fa-history fa-2x"
         // href: "#",
 
         // className: this.props.icon,
@@ -62,12 +62,13 @@ class WatchList extends Component {
         data-offset="{'bottom': 10, 'left': 0}"
       >
 
-        <ReactTooltip
+        {/* <ReactTooltip
           class='extraClass'
           effect='solid'
-          aria-haspopup='true' role='example'
+          aria-haspopup='true'
+          role='example'
         >
-        </ReactTooltip>
+        </ReactTooltip> */}
 
         {/* <ReactTooltip
           className='nav-link'

@@ -145,7 +145,8 @@ class Movie extends Component {
 
   componentDidMount() {
     this.setState({ loading: true })
-
+    console.log("this.props.match.params.movieId xxxxxxxxxx ", this.props.match.params.movieId);
+    
     // fetch the movie from open API
     const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
     this.fetchItems(endpoint); // Online API #1, #2
