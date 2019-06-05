@@ -1,15 +1,21 @@
+/* Padding class cuz if padding p, padding both home and another element */
 .Home {
-  /* float: left; */
   padding-left: 40px;
 }
 
+.Home p {
+  /* float: left; */
+  padding-left: 140px;
+  font-weight: normal;
+}
+
 .rmdb-navigation-content p {
-  /* font-size: 19px; */
   float: left;
-  /* font-weight: bold; */
-  /* color: white; */
-  /* padding-right: 10px; */
-  /* margin: 0; */
+  font-weight: normal;
+}
+
+.navigation-size {
+  font-size: 20px;
 }
 
 @media screen and (max-width: 650px) {

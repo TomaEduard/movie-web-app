@@ -8,10 +8,7 @@
 /* change navigation position */
 .navigation-preferences p {
   font-size: 19px;
-  /* float: left; */
-  font-weight: bold;
   color: rgb(31, 31, 31);
-  /* text-shadow: 2px 2px 4px #000000; */
   padding-right: 15px;
   padding-top: 10px;
   margin: 0;
