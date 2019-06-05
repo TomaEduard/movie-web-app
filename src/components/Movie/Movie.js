@@ -14,6 +14,7 @@ class Movie extends Component {
     actors: null,
     directors: [],
     loading: false,
+    nameForNavigation: null,
 
     rating: null,
     favorite: null,
@@ -145,8 +146,8 @@ class Movie extends Component {
 
   componentDidMount() {
     this.setState({ loading: true })
-    console.log("this.props.match.params.movieId xxxxxxxxxx ", this.props.match.params.movieId);
-    
+    console.log("this.props.match.params.movieId ", this.props.match.params.movieId);
+
     // fetch the movie from open API
     const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
     this.fetchItems(endpoint); // Online API #1, #2
@@ -180,7 +181,6 @@ class Movie extends Component {
 
       })
   }
-
 
   // fetchLocalItem = (request) => {
   //   fetch(request)
@@ -228,7 +228,10 @@ class Movie extends Component {
           this.setState({ loading: false });
         } else {
           // save the movie in movie state
-          this.setState({ movie: result }, () => {
+          this.setState({
+            movie: result,
+            nameForNavigation: result.title,
+          }, () => {
 
             // ... then fetch actors in the setState callback function
             const endpoint = `${API_URL}movie/${this.props.match.params.movieId}/credits?api_key=${API_KEY}`;
@@ -261,7 +264,9 @@ class Movie extends Component {
         {this.state.movie &&
           <div>
 
-            <Navigation movie={this.state.movie} />
+            <div className="navigation-movie">
+              <Navigation movie={this.state.nameForNavigation} />
+            </div>
 
             <MovieInfo
               movie={this.state.movie}
@@ -274,14 +279,12 @@ class Movie extends Component {
 
               playlist={this.state.playlist}
 
-
               // function
               changeRating={this.changeRating}
               changeFavorite={this.changeFavorite}
               changeWatchList={this.changeWatchList}
 
               changePlayList={this.changePlayList}
-
             />
 
             <MovieInfoBar
