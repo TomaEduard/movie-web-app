@@ -22,6 +22,77 @@ class Movie extends Component {
     playlist: false,
   }
 
+  componentDidMount() {
+    this.setState({ loading: true })
+    console.log("this.props.match.params.movieId ", this.props.match.params.movieId);
+
+    // fetch the movie from open API
+    const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
+    this.fetchItems(endpoint); // Online API #1, #2
+
+    // fetch the properties movie from local API
+    const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
+    this.fetchLocalItem(request); // Local API
+  }
+
+  fetchLocalItem = (request) => {
+    fetch(request)
+      .then(result => result.json())
+      .then(result => {
+
+        if (result.rating != null) {
+          this.setState({
+            favorite: result.favorite,
+            watchlist: result.watchlist,
+            rating: result.rating.toFixed(1),
+          })
+        } else {
+          this.setState({
+            favorite: result.favorite,
+            watchlist: result.watchlist,
+            rating: 0.0,
+          })
+        }
+
+        console.log("Movie - local API: ", result);
+        console.log("Movie - favorite-state: ", this.state.favorite);
+
+      })
+  }
+
+  fetchItems = (endpoint) => {
+    fetch(endpoint)
+      .then(result => result.json())
+      .then(result => {
+        console.log("Movie - #1 Online API: ", result);
+        if (result.status_code) {
+          this.setState({ loading: false });
+        } else {
+          // save the movie in movie state
+          this.setState({
+            movie: result,
+            nameForNavigation: result.title,
+          }, () => {
+            // ... then fetch actors in the setState callback function
+            const endpoint = `${API_URL}movie/${this.props.match.params.movieId}/credits?api_key=${API_KEY}`;
+            fetch(endpoint)
+              .then(result => result.json())
+              .then(result => {
+                console.log("Movie - #2 Online API: ", result);
+                const directors = result.crew.filter((member) => member.job === "Director");
+
+                this.setState({
+                  actors: result.cast,
+                  directors,
+                  loading: false
+                })
+              })
+          })
+        }
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
   // function for rating
   changeRating = (newRating) => {
     this.setState({
@@ -144,114 +215,7 @@ class Movie extends Component {
     console.log("Movie - changeWatchList - newValue -", newValue);
   }
 
-  componentDidMount() {
-    this.setState({ loading: true })
-    console.log("this.props.match.params.movieId ", this.props.match.params.movieId);
 
-    // fetch the movie from open API
-    const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
-    this.fetchItems(endpoint); // Online API #1, #2
-
-    // fetch the properties movie from local API
-    const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
-    this.fetchLocalItem(request); // Local API
-  }
-
-  fetchLocalItem = (request) => {
-    fetch(request)
-      .then(result => result.json())
-      .then(result => {
-
-        if (result.rating != null) {
-          this.setState({
-            favorite: result.favorite,
-            watchlist: result.watchlist,
-            rating: result.rating.toFixed(1),
-          })
-        } else {
-          this.setState({
-            favorite: result.favorite,
-            watchlist: result.watchlist,
-            rating: 0.0,
-          })
-        }
-
-        console.log("Movie - local API: ", result);
-        console.log("Movie - favorite-state: ", this.state.favorite);
-
-      })
-  }
-
-  // fetchLocalItem = (request) => {
-  //   fetch(request)
-  //     .then(result => result.json())
-  //     .then(result => {
-
-  //       if (result.rating != null && result.favorite == undefined) {
-  //         this.setState({
-  //           favorite: false,
-  //           watchlist: result.watchlist,
-  //           rating: result.rating.toFixed(1),
-  //         });
-  //       } else if (result.rating == null && result.favorite != undefined) {
-  //         this.setState({
-  //           favorite: result.favorite,
-  //           watchlist: result.watchlist,
-  //           rating: 0,
-  //         });
-  //       } else if (result.rating != null && result.favorite != null) {
-  //         this.setState({
-  //           favorite: result.favorite,
-  //           watchlist: result.watchlist,
-  //           rating: result.rating.toFixed(1),
-  //         });
-  //       } else if (result.rating == null && result.favorite == null) {
-  //         this.setState({
-  //           favorite: false,
-  //           watchlist: result.watchlist,
-  //           rating: 0,
-  //         });
-  //       }
-
-  //       console.log("Movie - local API: ", result);
-  //       console.log("Movie - favorite-state: ", this.state.favorite);
-
-  //     })
-  // }
-
-  fetchItems = (endpoint) => {
-    fetch(endpoint)
-      .then(result => result.json())
-      .then(result => {
-        console.log("Movie - #1 Online API: ", result);
-        if (result.status_code) {
-          this.setState({ loading: false });
-        } else {
-          // save the movie in movie state
-          this.setState({
-            movie: result,
-            nameForNavigation: result.title,
-          }, () => {
-
-            // ... then fetch actors in the setState callback function
-            const endpoint = `${API_URL}movie/${this.props.match.params.movieId}/credits?api_key=${API_KEY}`;
-            fetch(endpoint)
-              .then(result => result.json())
-              .then(result => {
-                console.log("Movie - #2 Online API: ", result);
-                const directors = result.crew.filter((member) => member.job === "Director");
-
-                this.setState({
-                  actors: result.cast,
-                  directors,
-                  loading: false
-                })
-              })
-          })
-        }
-      })
-      .catch(error => console.error('Error:', error))
-  }
 
   render() {
 

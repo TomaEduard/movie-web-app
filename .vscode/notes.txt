@@ -1,9 +1,16 @@
 find from: gene, language
 
 
-- query local API
-- find to public API with id's received from local db
-- Add FroudColGrid
+- reset button for radio(nu este ceckbox, 
+daca pui sa mearga dupa state chacked={this.state.rating} nu va mai merge faza cu radio
 
--edit MovieInfoBar change color to preferance top image and add some black/blur effect
+- filtru sa iei id'urile din request
+
+- online request dupa id'urile primite
+
+
+
+- edit MovieInfoBar change color from image preferance "header"
+
+- edit hover mouse movie
 

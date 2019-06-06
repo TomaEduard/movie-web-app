@@ -19,7 +19,7 @@ class WatchList extends Component {
     this.props.changeWatchList(!this.props.watchlist);
 
     // console.log("this.props.href ", this.props.href);
-    console.log("Wathlist - watchlist - ", this.props.watchlist);
+    console.log("Wathlist - onClick - ", this.props.watchlist);
   }
 
   render() {
