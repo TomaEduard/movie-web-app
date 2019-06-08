@@ -15,7 +15,7 @@ import './Preferences.css';
 
 class Preferences extends Component {
   state = {
-    name: "Preferences",
+    name: "Preferences & Filters",
   }
 
   render() {
@@ -33,7 +33,9 @@ class Preferences extends Component {
           <Navigation movie={this.state.name} />
         </div>
 
-        <Category />
+        <div className="">
+          <Category />
+        </div>
 
       </div>
 

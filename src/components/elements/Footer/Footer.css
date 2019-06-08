@@ -1,3 +1,8 @@
+.footer-shadow {
+  /* border: solid 3px #d509e7; */
+  box-shadow: 0px 5px 15px rgba(128, 128, 128, 0.753);
+}
+
 /* Let's style the wrapper in such away that, 
 it should always be at the center of the browser */
 .wrapper {

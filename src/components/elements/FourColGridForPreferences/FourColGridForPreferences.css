@@ -1,0 +1,62 @@
+.rmdb-grid-properties h1 {
+  padding-top: 0px;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.text-header {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.h2 {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+div.container {
+  padding: 0px;
+}
+
+.rmdb-grid-content-properties {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.rmdb-grid-element-properties {
+  margin: 0 17px 17px 0;
+  background: #ffffff;
+  max-height: 330px;
+  max-width: 220px;
+  animation: animateGrid 0.5s;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.671);
+}
+
+@keyframes animateGrid {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* For a 5-column grid */
+.rmdb-grid-element-properties:nth-child(5n + 5) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .rmdb-grid-content-properties {
+    grid-template-columns: auto auto;
+  }
+
+  .rmdb-grid-element-properties:nth-child(2n + 2) {
+    margin-right: 0;
+  }
+
+  .rmdb-grid-properties h1 {
+    font-size: 22px;
+  }
+}

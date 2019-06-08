@@ -1,6 +1,6 @@
 import React from 'react';
 import { IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../../../config';
-import MovieThumb from '../MovieThumb/MovieThumb';
+import MovieThumbMovie from '../MovieThumbMovie/MovieThumbMovie';
 // import RatingWidget from '../Rating/Rating';
 import './MovieInfo.css';
 import Stars from '../../../react-stars';
@@ -42,7 +42,7 @@ const MovieInfo = (props) => {
       <div className="container rmdb-movieinfo-content">
 
         <div className="rmdb-movieinfo-thumb">
-          <MovieThumb
+          <MovieThumbMovie
             image={props.movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${props.movie.poster_path}` : './images/no_image.jpg'}
             clickable={false}
           />

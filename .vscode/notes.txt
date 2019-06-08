@@ -1,16 +1,16 @@
-find from: gene, language
 
+-spiner
+-search 
 
-- reset button for radio(nu este ceckbox, 
-daca pui sa mearga dupa state chacked={this.state.rating} nu va mai merge faza cu radio
+-finish query by filtre
 
-- filtru sa iei id'urile din request
-
-- online request dupa id'urile primite
-
-
+-more button for preference
 
 - edit MovieInfoBar change color from image preferance "header"
 
-- edit hover mouse movie
+- edit searchbar Home
+
+*nu merge back-end'ul cu pageNumber, paged
+*swagger favorite true sau false iti aduce de toate, doar -- este fara
+
 

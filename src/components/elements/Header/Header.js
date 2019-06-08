@@ -73,7 +73,7 @@ const Header = () => {
                 src="./../../../images/Vector-20-512.png"
                 alt="./../../../images/no_image.jpg"
               />
-              <span className="test1 pl-3">Your preferences</span>
+              <span className="test1 pl-3">Preferences & Filters</span>
 
             </Link>
           </Dropdown.Item>

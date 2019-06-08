@@ -11,7 +11,7 @@ const Footer = () => {
 
     <footer className="page-footer font-small blue-grey lighten-5">
 
-      <div className="container-fliid shadow-lg"
+      <div className="container-fluid footer-shadow"
         style={{
           background: '#fed90f'
         }}>

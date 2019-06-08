@@ -36,7 +36,7 @@ class Home extends Component {
           heroImage: this.state.heroImage || result.results[0],
           loading: false,
           currentPage: result.page,
-          totalPages: result.total_pages
+          totalPages: result.total_pages,
         })
         console.log("Home - OLD - this.state.movies ", this.state.movies);
       })
@@ -61,6 +61,7 @@ class Home extends Component {
     this.fetchItems(endpoint);
   }
 
+  // Load more button
   loadMoreItems = () => {
     let endpoint = '';
     this.setState({ loading: true });
@@ -112,8 +113,9 @@ class Home extends Component {
 
           {this.state.loading ? <Spinner /> : null}
           {/* if currnetPage isn't last page and loading is false,then show load more btn */}
-          {(this.state.currentPage <= this.state.totalPages && !this.state.loading) ?
-            <LoadMoreBtn text="Load More" onClick={this.loadMoreItems} /> : null}
+          {(this.state.currentPage < this.state.totalPages && !this.state.loading) ?
+            <LoadMoreBtn text="Load More" onClick={this.loadMoreItems} />
+            : null}
         </div>
 
         <br></br>

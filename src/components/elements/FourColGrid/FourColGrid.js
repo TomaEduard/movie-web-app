@@ -6,7 +6,7 @@ const FourColGrid = (props) => {
   const renderElement = () => {
     const gridElement = props.children.map((element, i) => {
       return (
-        <div key={i} className="rmdb-grid-element shadow-lg rounded">
+        <div key={i} className="rmdb-grid-element shadow-md rounded ">
           {element}
         </div>
       )

@@ -1,6 +1,6 @@
-# M.app (frontend)
+# M.app (front-end)
 
-Didactic project that aims to use elementary things for the purpose of learning. This application is the frontend side that uses public API (mdb) to display and sort movies. Below the deployment sessions find the links attached to each component.
+Didactic project that aims to use elementary things for the purpose of learning. This application is the front-end side that uses public API (mdb) to display and sort movies. Below to the Application sessions find the links attached to each component.
 
 ## Getting Started
 
@@ -28,16 +28,17 @@ npm test
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Deployment
+## Application
 
 - [Backend](https://github.com/TomaEduard/movie-app-api)
 
 ## Built With
 
-- [Reactjs ^16.5.2"](https://reactjs.org/) - The web library
-- [React Bootstrap ^4.3.1](https://react-bootstrap.github.io/) - Dependency Management
-
+- [Reactjs ^16.5.2](https://reactjs.org/) - The web library
+- [Redux ^4.0.1](https://www.npmjs.com/package/redux) - State management
+- [React Bootstrap ^4.3.1](https://react-bootstrap.github.io/) - Front-end framework
 - [React-Fontawesome ^4.7.0](https://rometools.github.io/rome/) - Used to generate icons
+- [React-Stars ^2.2.5](https://www.npmjs.com/package/react-stars) - A simple star rating component for your React projects.
 
 ## Versioning
 
