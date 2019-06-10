@@ -30,7 +30,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Application
 
-- [Backend](https://github.com/TomaEduard/movie-app-api)
+- [Back-end](https://github.com/TomaEduard/movie-app-api)
 
 ## Built With
 
