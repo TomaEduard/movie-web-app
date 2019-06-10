@@ -124,13 +124,21 @@ const Footer = () => {
         </div>
       </div>
 
+      <div className="container tech">
+        <h5>API & Technology :</h5>
+      </div>
+
       <div className="container mb-2 py-1 ">
         <div className="row">
 
-          <div className="secondary">
-            <h3>Technology used:</h3>
 
-          </div>
+
+          <Link to="https://www.imdb.com/">
+            <img className="imdb-footer-icon pt-0"
+              src="./../../../images/imdb-footer-logo.png"
+              alt="no_image"
+            />
+          </Link>
 
           <Link to="https://www.themoviedb.org/?language=en-US">
             <img className="tmdb-icon pt-0"

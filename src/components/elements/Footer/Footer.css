@@ -106,20 +106,26 @@ to align it properly */
   transition: all 0.5s ease;
 }
 
-.secondary h3 {
+.tech h5 {
   font-weight: normal;
   padding-bottom: 0px;
-  margin-top: 48px;
   padding-top: 0px;
   padding-right: 16px;
   color: #b6b6b4;
 }
 
 /* Edit icons */
+.imdb-footer-icon {
+  height: auto;
+  width: 140px;
+  opacity: 0.87;
+}
+
 .tmdb-icon {
   height: auto;
-  width: 91px;
+  width: 113px;
   opacity: 0.87;
+  padding-left: 22px;
 }
 
 .react-icon {
@@ -130,7 +136,7 @@ to align it properly */
 
 .redux-icon {
   height: auto;
-  width: 242px;
+  width: 231px;
   opacity: 0.87;
 }
 
@@ -144,7 +150,7 @@ to align it properly */
 
 .spring-boot-icon {
   height: auto;
-  width: 247px;
+  width: 242px;
   opacity: 0.87;
 }
 

@@ -1,9 +1,8 @@
 
+-add more pages
+-add hover effect show title and preference ?
+
 -more button for preference
-
-- edit MovieInfoBar change color from image preferance "header"
-
-- edit searchbar Home
 
 *nu merge back-end'ul cu pageNumber, paged
 *swagger favorite true sau false iti aduce de toate, doar -- este fara
