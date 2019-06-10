@@ -1,9 +1,4 @@
 
--spiner
--search 
-
--finish query by filtre
-
 -more button for preference
 
 - edit MovieInfoBar change color from image preferance "header"

@@ -2,7 +2,12 @@
   max-width: 100%;
   height: auto;
   background-size: contain;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 7px 11px 1px rgba(0, 0, 0, 0.3),
+    0 10px 60px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navigation-preferences {
+  padding-top: 5px;
 }
 
 /* change navigation position */
@@ -14,7 +19,6 @@
   margin: 0;
 }
 
-.shadow {
+/* .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
+} */

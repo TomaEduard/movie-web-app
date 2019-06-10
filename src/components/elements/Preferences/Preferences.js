@@ -29,7 +29,7 @@ class Preferences extends Component {
           alt='../../../../src/images'
         />
 
-        <div className="navigation-preferences pt-3">
+        <div className="navigation-preferences">
           <Navigation movie={this.state.name} />
         </div>
 

@@ -106,6 +106,48 @@ to align it properly */
   transition: all 0.5s ease;
 }
 
+.secondary h3 {
+  font-weight: normal;
+  padding-bottom: 0px;
+  margin-top: 48px;
+  padding-top: 0px;
+  padding-right: 16px;
+  color: #b6b6b4;
+}
+
+/* Edit icons */
+.tmdb-icon {
+  height: auto;
+  width: 91px;
+  opacity: 0.87;
+}
+
+.react-icon {
+  height: auto;
+  width: 215px;
+  opacity: 0.87;
+}
+
+.redux-icon {
+  height: auto;
+  width: 242px;
+  opacity: 0.87;
+}
+
+.react-boostrap-icon {
+  height: auto;
+  width: 81px;
+  padding-top: 3px;
+  padding-left: 1px !important;
+  opacity: 0.8;
+}
+
+.spring-boot-icon {
+  height: auto;
+  width: 247px;
+  opacity: 0.87;
+}
+
 /* media queries */
 
 @media screen and (max-width: 640px) {

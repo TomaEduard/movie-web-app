@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import Media from "react-media";
 import './Footer.css';
 // import Contact from '../Contact/Contact';
@@ -122,6 +122,55 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="container mb-2 py-1 ">
+        <div className="row">
+
+          <div className="secondary">
+            <h3>Technology used:</h3>
+
+          </div>
+
+          <Link to="https://www.themoviedb.org/?language=en-US">
+            <img className="tmdb-icon pt-0"
+              src="./../../../images/293x302-powered-by-square-green-3ee4814bb59d8260d51efdd7c124383540fc04ca27d23eaea3a8c87bfa0f388d.png"
+              alt="no_image"
+            />
+          </Link>
+
+          <Link to="https://reactjs.org/">
+            <img className="react-icon pl-3"
+              src="./../../../images/React-logo-1.png"
+              alt="no_image"
+            />
+          </Link>
+
+          <Link to="https://redux.js.org/">
+            <img className="redux-icon pl-3"
+              src="./../../../images/1_BpaqVMW2RjQAg9cFHcX1pw.png"
+              alt="no_image"
+            />
+          </Link>
+
+          <Link to="https://react-bootstrap.github.io/">
+            <img className="react-boostrap-icon pl-3"
+              src="./../../../images/event-cover-5388.png"
+              alt="no_image"
+            />
+          </Link>
+
+          <Link to="https://spring.io/projects/spring-boot">
+            <img className="spring-boot-icon pl-3"
+              src="./../../../images/spring-boot.png"
+              alt="no_image"
+            />
+          </Link>
+
+
+        </div>
+
+
       </div>
 
       <div className="container"

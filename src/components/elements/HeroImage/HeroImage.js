@@ -11,6 +11,7 @@ const HeroImage = (props) => {
           41%,rgba(0,0,0,0.65)
           100%),
           url('${props.image}'), #1c1c1c`
+
       }}
     >
 

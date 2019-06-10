@@ -140,7 +140,7 @@ class Category extends Component {
 
     var fav = '' + (this.state.favorite === true ? `favorite=${this.state.favorite}&` : '');
     var wat = '' + (this.state.watchlist === true ? `&watchlist=${this.state.watchlist}` : '');
-    var par = '' + (this.state.partialName != '' ? `&partialName=${this.state.partialName}` : '');
+    var par = '' + (this.state.partialName !== '' ? `&partialName=${this.state.partialName}` : '');
 
     let request = `${LOCAL_API_URL}movies?${fav}pageNumber=${this.state.pageNumber}${par}&pageSize=20&rating=${this.state.rating}${wat}`
 
