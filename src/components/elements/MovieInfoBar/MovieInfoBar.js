@@ -1,6 +1,7 @@
 import React from 'react';
 import { calcTime, convertMoney } from '../../../helpers.js';
 import './MovieInfoBar.css';
+import PropTypes from 'prop-types';
 
 const MovieInfoBar = (props) => {
   return (
@@ -27,6 +28,11 @@ const MovieInfoBar = (props) => {
       </div>
     </div>
   )
+}
+
+MovieInfoBar.prototype = {
+  time: PropTypes.bool,
+  budget: PropTypes.bool,
 }
 
 export default MovieInfoBar;

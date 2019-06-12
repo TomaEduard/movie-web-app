@@ -12,29 +12,8 @@ function Star(props) {
 
     },
       React.createElement("i", { className: "fas fa-star" }))
-
   );
 }
-
-// // Function
-// function Rating(props) {
-//   const messages = {
-//     "1": "Oh. Sorry you had a bad experience :( ",
-//     "2": "We will try to improve.",
-//     "3": "Appreciate it!",
-//     "4": "Thank you!",
-//     "5": "You're Awesome!"
-//   };
-
-//   let rating = props.rating;
-
-//   return (
-//     React.createElement("div", { className: "after-rating-message " + (rating > 0 ? 'show' : '') },
-//       React.createElement("span", null, "You rated this ", rating, " star", rating > 1 ? 's' : ''),
-//       React.createElement("br", null),
-//       React.createElement("span", null, messages[rat ing])));
-// }
-
 
 // Class
 class RatingWidget extends React.Component {
@@ -45,56 +24,7 @@ class RatingWidget extends React.Component {
       rated: 3.0
     };
 
-    // console.log("v1 " + this.props.rated);
   }
-
-  // componentDidMount() {
-
-  //   this.setState({ rated: this.props.rated })
-  //   console.log("componentDidMount+this.state.rated " + this.state.rated);
-  //   console.log("componentDidMount+ " + this.props.rated);
-
-  // // fetch the movie from open API
-  // const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
-  // this.fetchItems(endpoint);
-
-  // // fetch the properties movie from local API
-  // const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
-  // this.fetchLocalItem(request);
-  // }
-
-
-  // handleMouseOver(i) {
-  //   let currentRating = this.state.rated;
-
-  //   if (currentRating > 0) {
-  //     const hoverRatedStars = this.state.stars.slice();
-  //     _.fill(hoverRatedStars, 0, currentRating, i);
-  //     this.setState({ stars: hoverRatedStars });
-  //   } else {
-  //     const hoverStars = Array(5).fill(-1);
-  //     _.fill(hoverStars, 0, 0, i + 1);
-  //     this.setState({ stars: hoverStars });
-  //   }
-
-  //   // console.log("handleMouseOver " + this.state.stars);
-
-  // }
-
-  // handleMouseOut() {
-  //   let currentRating = this.state.rated;
-  //   if (currentRating > 0) {
-  //     const resetRatedStars = this.state.stars.slice();
-  //     _.fill(resetRatedStars, -1, currentRating, resetRatedStars.length);
-  //     this.setState({ stars: resetRatedStars });
-  //   } else {
-  //     const resetStars = this.state.stars.slice();
-  //     _.fill(resetStars, -1, 0, resetStars.length);
-  //     this.setState({ stars: resetStars });
-  //   }
-
-  //   // console.log("handleMouseOut" + this.state.rated);
-  // }
 
   Click(i) {
     const clickedStar = this.state.stars.slice();
@@ -110,7 +40,7 @@ class RatingWidget extends React.Component {
     // console.log("Click:this.state.rated: " + this.state.rated);
   }
 
-  // // text
+
   // handleRating(rated) {
   // console.log("2#test" + rated);
 
@@ -137,12 +67,8 @@ class RatingWidget extends React.Component {
     });
   }
 
-
-
-
   render() {
 
-    // console.log("SA FIE BINE " + this.props.rated);
     // this.state.rated = this.props.rated;
 
     return (

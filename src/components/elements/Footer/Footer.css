@@ -118,26 +118,26 @@ to align it properly */
 .imdb-footer-icon {
   height: auto;
   width: 140px;
-  opacity: 0.87;
+  opacity: 0.95;
 }
 
 .tmdb-icon {
   height: auto;
   width: 113px;
-  opacity: 0.87;
+  opacity: 0.95;
   padding-left: 22px;
 }
 
 .react-icon {
   height: auto;
   width: 215px;
-  opacity: 0.87;
+  opacity: 0.95;
 }
 
 .redux-icon {
   height: auto;
   width: 231px;
-  opacity: 0.87;
+  opacity: 0.95;
 }
 
 .react-boostrap-icon {
@@ -145,13 +145,13 @@ to align it properly */
   width: 81px;
   padding-top: 3px;
   padding-left: 1px !important;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .spring-boot-icon {
   height: auto;
   width: 242px;
-  opacity: 0.87;
+  opacity: 0.9;
 }
 
 /* media queries */

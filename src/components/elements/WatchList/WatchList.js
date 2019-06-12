@@ -14,7 +14,6 @@ class WatchList extends Component {
   //   this.setState({ hover: !this.state.hover });
   // }
 
-
   onClick() {
     this.props.changeWatchList(!this.props.watchlist);
 
@@ -38,7 +37,6 @@ class WatchList extends Component {
     };
 
     console.log("WatchList - props - ", this.props);
-
 
     return (
       // React.createElement("a", { href: this.props.href },
@@ -78,13 +76,9 @@ class WatchList extends Component {
           <span>Show happy face</span>
         </ReactTooltip> */}
 
-
-
-
       </Link>
 
     )
-
       // {this.state.hover ? 'true' : 'false'}
 
       // )
