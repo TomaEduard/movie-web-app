@@ -32,7 +32,6 @@ class PlayList extends Component {
         style={iconStyle}
 
         onClick={() => this.onClick()}
-
         data-tip='Playlist'
         data-delay-update='1000'
         data-place='bottom'

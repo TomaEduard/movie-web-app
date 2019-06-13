@@ -26,9 +26,16 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
-    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-    this.fetchItems(endpoint);
+    if (localStorage.getItem('HomeState')) { // Check if we have state in ls befor retrive something
+      // take string from ls and convert back to object
+      const state = JSON.parse(localStorage.getItem('HomeState'))
+      // setState previous var
+      this.setState({...state})
+    } else {
+      this.setState({ loading: true });
+      const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+      this.fetchItems(endpoint);
+    }
   }
 
   fetchItems = (endpoint) => {
@@ -43,6 +50,12 @@ class Home extends Component {
           loading: false,
           currentPage: result.page,
           totalPages: result.total_pages,
+        }, () => {  // After set state, save data in ls if search element is empty
+          if(this.state.searchTerm === "") {
+          // Convert object to string for storage
+          localStorage.setItem('HomeState', JSON.stringify(this.state));
+          }
+          
         })
         console.log("Home - OLD - this.state.movies ", this.state.movies);
       })

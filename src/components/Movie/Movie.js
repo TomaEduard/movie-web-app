@@ -23,12 +23,18 @@ class Movie extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true })
-    console.log("this.props.match.params.movieId ", this.props.match.params.movieId);
-
-    // fetch the movie from open API
-    const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
-    this.fetchItems(endpoint); // Online API #1, #2
+    // Check if we have state in ls befor making query
+    if (localStorage.getItem(`${this.props.match.params.movieId}`)) {
+      const state = JSON.parse(localStorage.getItem(`${this.props.match.params.movieId}`));
+      this.setState({...state})
+    } else {
+      this.setState({ loading: true })
+      console.log("this.props.match.params.movieId ", this.props.match.params.movieId);
+  
+      // fetch the movie from open API
+      const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
+      this.fetchItems(endpoint); // Online API #1, #2
+    }
 
     // fetch the properties movie from local API
     const request = `http://localhost:8083/movies/${this.props.match.params.movieId}`;
@@ -85,6 +91,9 @@ class Movie extends Component {
                   actors: result.cast,
                   directors,
                   loading: false
+                }, () => {
+                  localStorage.setItem(`${this.props.match.params.movieId}`, JSON.stringify(this.state));
+
                 })
               })
           })

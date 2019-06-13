@@ -40,9 +40,16 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
-    const request = `${LOCAL_API_URL}movies?$pageNumber=${this.state.pageNumber}&pageSize=20`;
-    this.fetchLocalItems(request);
+    if (localStorage.getItem('Category')) { // Check if we have state in ls befor making query
+      // take string from ls and convert back to object
+      const state = JSON.parse(localStorage.getItem('Category'))
+      // setState previous var
+      this.setState({...state})
+    } else { // if not exist Category item in ls make a request
+      this.setState({ loading: true });
+      const request = `${LOCAL_API_URL}movies?$pageNumber=${this.state.pageNumber}&pageSize=20`;
+      this.fetchLocalItems(request);
+    }
   }
 
   fetchLocalItems = (endpoint) => {
@@ -73,7 +80,7 @@ class Category extends Component {
           // query to public API with this id's
           getMovieId.map(result => {
             var url = `${API_URL}movie/${result}?api_key=${API_KEY}&language=en-US`
-
+ 
             fetch(url)
               .then(result => result.json())
               .then(result => {
@@ -85,9 +92,13 @@ class Category extends Component {
                     result                   // update old state with result/specific key
                   ],
                   loading: false,            // turn off spinner
+                }, () => {  // After set state, save data in ls if search element is empty
+                  if (this.state.partialName === "") {
+                    // Convert object to string for storage
+                    localStorage.setItem('Category', JSON.stringify(this.state));
+                  }
                 })
 
-                // console.log("Category - this.state -", this.state);
               })
           })
 
