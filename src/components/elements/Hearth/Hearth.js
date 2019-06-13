@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Hearth.css';
 
-const Hearth = (props) => {
+const Hearth = ({favorite, changeFavorite}) => {
 
   // state = {
   //   hovered: true,
@@ -11,7 +11,7 @@ const Hearth = (props) => {
 
   // const [hovered, setHovered] = useState(false);
 
-  console.log("Hearth - favorite - ", props);
+  console.log("Hearth - favorite, changeFavorite - ", favorite, changeFavorite);
   // console.log("Hearth - changeFavorite - ", props.changeFavorite);
 
   return (
@@ -22,11 +22,11 @@ const Hearth = (props) => {
       <input
         type="checkbox"
         id="checkbox"
-        defaultChecked={props.favorite}
+        defaultChecked={favorite}
         // defaultChecked={true}
         // checked={true}
         // onChange={props.changeFavorite(!props.favorite)}
-        onClick={() => props.changeFavorite(!props.favorite)}
+        onClick={() => changeFavorite(!favorite)}
         // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
         // onMouseEnter={data-toggle="tooltip" data-placement="left" title="Tooltip on left"}
         // onMouseEnter={toggleHover}
@@ -34,8 +34,6 @@ const Hearth = (props) => {
 
         data-tip="tooltip"
         data-delay-update='1000'
-
-
 
       // onMouseEnter={() => {
       //   ReactTooltip.show("asd")

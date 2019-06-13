@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeroImage.css';
 
-const HeroImage = (props) => {
+const HeroImage = ({image, title, text}) => {
   return (
     <div className="rmdb-heroimage"
       style={{
@@ -10,15 +10,15 @@ const HeroImage = (props) => {
           39%,rgba(0,0,0,0)
           41%,rgba(0,0,0,0.65)
           100%),
-          url('${props.image}'), #1c1c1c`
+          url('${image}'), #1c1c1c`
 
       }}
     >
 
       <div className="rmdb-heroimage-content">
         <div className="rmdb-heroimage-text">
-          <h1 className="hero-h">{props.title}</h1>
-          <p className='hero-p'>{props.text}</p>
+          <h1 className="hero-h">{title}</h1>
+          <p className='hero-p'>{text}</p>
         </div>
       </div>
 

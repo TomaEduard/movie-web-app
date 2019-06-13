@@ -1,13 +1,13 @@
 import React from 'react';
 import './LoadMoreBtn.css';
 
-const LoadMoreBtn = (props) => {
+const LoadMoreBtn = ({onClick, text}) => {
   return (
     <div className="container">
       <div
         className="btn btn-outline-dark btn-block btn-sm"
-        onClick={props.onClick}>
-        <p>{props.text}</p>
+        onClick={onClick}>
+        <p>{text}</p>
       </div>
     </div>
 
