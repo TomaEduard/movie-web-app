@@ -4,7 +4,7 @@ Didactic project that aims to use elementary things for the purpose of learning.
 
 *login/Logout/Signin will be added
 ## Screenshots
-![screencapture-localhost-3000-2020-06-11-00_30_04](https://user-images.githubusercontent.com/45673679/84321610-2697d300-ab7c-11ea-90d8-855cb04d5a68.png)
+![screencapture-localhost-3000-2020-06-11-00_28_59-min](https://user-images.githubusercontent.com/45673679/84322023-f7ce2c80-ab7c-11ea-93bb-f793e86ac5c0.png)
 
 ![screencapture-localhost-3000-2020-06-11-00_30_04](https://user-images.githubusercontent.com/45673679/84321610-2697d300-ab7c-11ea-90d8-855cb04d5a68.png)
 
