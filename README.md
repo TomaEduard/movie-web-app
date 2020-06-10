@@ -2,35 +2,13 @@
 
 Didactic project that aims to use elementary things for the purpose of learning. This application is the front-end side that uses public API (mdb) to display and sort movies. Below to the Application sessions find the links attached to each component.
 
-## Getting Started
+*login/Logout/Signin will be added
+## Screenshots
+![screencapture-localhost-3000-2020-06-11-00_30_04](https://user-images.githubusercontent.com/45673679/84321610-2697d300-ab7c-11ea-90d8-855cb04d5a68.png)
 
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+![screencapture-localhost-3000-2020-06-11-00_30_04](https://user-images.githubusercontent.com/45673679/84321610-2697d300-ab7c-11ea-90d8-855cb04d5a68.png)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-```
-npm start
-```
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-```
-npm test
-```
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## Application
-
-- [Back-end](https://github.com/TomaEduard/movie-app-api)
+![screencapture-localhost-3000-movie-481848-2020-06-11-00_39_42](https://user-images.githubusercontent.com/45673679/84321602-24ce0f80-ab7c-11ea-8e80-aef6f2cfe994.png)
 
 ## Built With
 
