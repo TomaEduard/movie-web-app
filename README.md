@@ -4,11 +4,22 @@ Didactic project that aims to use elementary things for the purpose of learning.
 
 *login/Logout/Signin will be added
 ## Screenshots
+
+Home Page
+
 ![screencapture-localhost-3000-2020-06-11-00_28_59-min](https://user-images.githubusercontent.com/45673679/84322023-f7ce2c80-ab7c-11ea-93bb-f793e86ac5c0.png)
+
+Search on Home Page
 
 ![screencapture-localhost-3000-2020-06-11-00_30_04](https://user-images.githubusercontent.com/45673679/84321610-2697d300-ab7c-11ea-90d8-855cb04d5a68.png)
 
+Select Movie and set preferences
+
 ![screencapture-localhost-3000-movie-481848-2020-06-11-00_39_42](https://user-images.githubusercontent.com/45673679/84321602-24ce0f80-ab7c-11ea-8e80-aef6f2cfe994.png)
+
+Preference & Filters Page
+
+![Uploading screencapture-localhost-3000-preferences-2020-06-11-05_07_08.png…]()
 
 ## Built With
 
